@@ -34,7 +34,42 @@
 				scene = new THREE.Scene();
 
 
-				// paste your code from the geometryGUI here
+				map = THREE.ImageUtils.loadTexture('../texturez/crate.jpg');
+geometry = new THREE.CubeGeometry(200, 200, 200);
+material = new THREE.MeshLambertMaterial({shading: THREE.FlatShading, color: 0xdcdcdc, map: map});
+mesh = new THREE.Mesh(geometry, material);
+map.wrapS = map.wrapT = THREE.RepeatWrapping;
+map.repeat.set( 1, 1 );
+mesh.castShadow = true;
+scene.add(mesh);
+
+bg = document.body.style;
+bg.background = '#000000';
+
+renderer.shadowMapEnabled = true;
+
+scene.fog = new THREE.Fog( 0xffffff, 1, 9000 );ambientLight = new THREE.AmbientLight( 0x000000 );
+scene.add( ambientLight );
+
+hemisphereLight = new THREE.HemisphereLight(0xffffff, 0xffffff, 1.32);
+scene.add( hemisphereLight );
+
+directionalLight = new THREE.DirectionalLight(0xffffff, 0.1);
+directionalLight.position.set( 0, 1, 0 );
+directionalLight.castShadow = true;
+scene.add( directionalLight );
+
+spotLight1 = new THREE.SpotLight( 0xffffff, 0.1 );
+spotLight1.position.set( 100, 1000, 100 );
+spotLight1.castShadow = true;
+spotLight1.shadowDarkness = 0.2;
+scene.add( spotLight1 );
+
+spotLight2 = new THREE.SpotLight( 0xffffff, 0.1 );
+spotLight2.position.set( 100, 1000, 100 );
+spotLight2.castShadow = true;
+spotLight2.shadowDarkness = 0.2;
+scene.add( spotLight2 );
 
 
 			}
@@ -43,8 +78,17 @@
 
 				requestAnimationFrame( draw );
 
-				// experiment with code from the snippets menu here
 
+				/* ------------------- INSTRUCTIONS -----
+				to rotate a mesh
+				add the code below to your draw() function
+
+				mess with the numbers to change the speed
+
+				-------------------------------------- */
+				mesh.rotation.x = Date.now() * 0.0005;
+				mesh.rotation.y = Date.now() * 0.0002;
+				mesh.rotation.z = Date.now() * 0.001;
 				renderer.render( scene, camera );
 
 			}
@@ -55,3 +99,4 @@
 		</script>
 
 	</body>
+</html>
