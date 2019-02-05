@@ -1,0 +1,149 @@
+/*main css telling it what stuff should be if it's not labeled*/
+* {	margin: 0;	padding: 0;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+/*text-align: center;*/}
+body {
+  	margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 150px;
+    margin-left: 80px;
+    background-color: #FFFFFF;
+    color: #222255;
+    font-family: 'Helvetica Neue','Helvetica', Arial, sans-serif;
+    text-align: left;
+}
+   /*LINK COLORS and stuff*/
+
+a:link {	color:#167ac6;	text-decoration: none;
+}
+a:visited {	text-decoration: none;	color: #167ac6;
+  	/*this is the back to homepage button*/
+}
+a:hover {	text-decoration: underline;	color: #167ac6;
+  /*The color that shows up when you click*/
+   }
+a:active {	text-decoration: none;	color: Coral;
+  	/*when hovered*/
+   }
+td, th {	color: red;	/*i have no idea what this is*/
+}
+
+.head{   adding-top: 50px;
+     padding-right: 30px;
+     padding-bottom: 50px;
+     padding-left: 30px;
+     background-color:AliceBlue;
+     font-size:20px;
+   }
+
+.head_space{	padding-right:5px;
+  padding-left:5px;}
+/* START of new code*/
+.index-container{	/*hover over css*/}
+.image {
+  display: block;  width: 100%;
+  height: auto;}
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;  transition:
+  .5s ease;
+  background-color: #008CBA;
+}
+.container:hover .overlay {
+  opacity: 1;}
+.text {
+  color: black;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+.postiion {
+  position: fixed;	left:30px;	top:100px;
+  }/* end of new code*/
+.container {
+  width: 1200px;	/*we did not define the height*/
+  margin: 0 auto;	/*opacity: 90%;*/	/*background-color: LightSlateGray;*/	/*fuck this is the BACKGROUND OF THE VIDEO SELECION PAGE	main container*/	box-sizing: border-box;	padding: 0 40px;	/*we actually don't want padding*/}.item_container {	/*background-color: CadetBlue;*/	/*this is the box around the video, the text is on it*/	box-sizing: border-box;
+  min-height: 300px;
+  padding: 20px;
+  margin-bottom: 40px;
+  clear: both;
+}
+  .item_container_wpix {
+    background-color: Thistle;
+    box-sizing: border-box;
+    min-height: 300px;
+    padding: 20px;
+	margin-bottom: 40px;	clear: both;	/**/
+    }.header { padding: 40px;}.item_left, .item_right, .item_smallleft, .item_largeright {	float:left;}
+    .item_left{	width:450px;	margin-right: 30px;}.item_right{	width:550px;	margin-right: 0px;}
+    .item_archive{	width:1000px;
+  padding: 10px;	font-size:16px;	margin-right: 0px;	margin-bottom: 10px;	color: #eeeeee;	background-color: #aaa;}
+  .item_archive:hover{	width:1000px;	margin-right: 0px;	font-size:24px;	color : #FFF;	margin-bottom: 10px;	color: #fff;	background-color: #777;}
+  .item_smallleft{	width:350px;	margin-right: 30px;}.item_largeright{	width:650px;	margin-right: 0px;}.item_left img.sketchpic,
+  .item_right img.sketchpic {	width: 400px;	height:250px;	border:4px none;/*}border around video*/
+.item_smallleft img
+  .smallvideopix,
+  .item_largeright img
+  .smallvideopix {
+  	width: 300px;
+    border:4px solid AliceBlue;
+}
+.item_smallleft img.docpix,
+.item_largeright img.docpix {
+  	width: 300px;
+    height: 260px;p {	color: black;}
+.vid_title {	font-family: Geneva, Arial, Helvetica, sans-serif;
+      padding: 5px;
+      color: #f00;
+      background-color: #777;
+      margin-bottom: 10px;}
+.vlog_date {	font-family: Geneva, Arial, Helvetica, sans-serif;
+  padding: 5px;
+  font-size:10px;
+    font-style:oblique;
+    background-color: Peru;
+    margin-bottom: 20px;
+}
+.statement_text {/*different from the underscore so we can have two statement texts*/
+  	background-color: #999;	padding: 8px;	margin-top: 20px;	border: 1px dashed black;}/*drop down CSS*//*.dropbtn
+{    background-color: #4CAF50;    color: white;    padding: 16px;    font-size: 16px;
+ border: none;    cursor: pointer;}.dropdown {    position: left;    display: inline-block;}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+   min-width: 160px;
+   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+   z-index: 1;
+}
+.dropdown-content
+a {
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
+.dropdown-content a:hover {
+  background-color: #f1f1f1
+}
+.dropdown:hover
+.dropdown-content {
+  display: block;}.dropdown:hover
+.dropbtn {
+    background-color: #3e8e41;
+}
+
+
+
+*/
