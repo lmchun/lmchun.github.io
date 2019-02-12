@@ -11,7 +11,10 @@ var locked =false;
 
 
 function preload(){
-img=loadImage('fbr.jpg')
+img=loadImage('fbr.jpg');
+     soundFormats('mp3','ogg');
+    PresetMusic = loadSound('music.mp3');
+
 }
 
 function setup() {
