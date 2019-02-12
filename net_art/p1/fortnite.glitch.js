@@ -37,38 +37,38 @@ function setup() {
     function draw(){
 
         
+      
+//    if (mouseIsPressed) {
+//        ///////do something//////////
+//        // something =true;
+//                        } 
+//        else {
+//        //something = false;
+//             }
 //        
-////    if (mouseIsPressed) {
-////        ///////do something//////////
-////        // something =true;
-////                        } 
-////        else {
-////        //something = false;
-////             }
-////        
-//////////////////////////////this is the hover thing/////////////////////////////////////////////
-//        ////parameters/////
-//    if (mouseX > bx-1601 && mouseX < bx+902 && 
-//      mouseY > by-1601 && mouseY < by+902) {
-/////////variable to help//////        
-//    overBox = true;  
-//    if(!locked) { 
-////      stroke(255); 
-////      fill(244,122,158);
-//img=loadImage('fbrhover.jpg')        
-//        
-//        
-//    } 
-//  } else {
-////    stroke(156,39,176);
-////    fill(244,122,158);
-//        
-//  img=loadImage('fbr.jpg')    
-//      
-//        
-/////////variable to help//////  
-//    overBox = false;
-//  }
+////////////////////////////this is the hover thing/////////////////////////////////////////////
+        ////parameters/////
+    if (mouseX > bx-1601 && mouseX < bx+902 && 
+      mouseY > by-1601 && mouseY < by+902) {
+///////variable to help//////        
+    overBox = true;  
+    if(!locked) { 
+//      stroke(255); 
+//      fill(244,122,158);
+img=loadImage('fbrhover.jpg')        
+        
+        
+    } 
+  } else {
+//    stroke(156,39,176);
+//    fill(244,122,158);
+        
+  img=loadImage('fbr.jpg')    
+      
+        
+///////variable to help//////  
+    overBox = false;
+  }
 //
 //        
 //        
