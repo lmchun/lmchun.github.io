@@ -14,17 +14,34 @@
   left: 0;
    z-index: 1;
 }
+    .background-image {
+        background-image: url("fbr.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        height: 100%;
+        width: 100%;
+    }
 
+    .bb {
+       display:block;
+        position:relative;
+        padding: 10px;
 /*
-  make the image a background
-
-
-either in body and paragraph  
+        padding-top: 241px;
+        
 */
+    }
+    
+    
+    .bc{
+      padding-top: 37px;  
+        
+    }
 .bbimg {
   position: absolute;
   padding-left: 90px;
-  padding-top: 200px;
+  padding-top: 5px;
   z-index: 2;
 }
 .bcimg {
@@ -63,20 +80,27 @@ either in body and paragraph
     </style>
     </head>
 <body>  
+<div class = "background-image">
 
-<img src = "fbr.jpg"class="base" style="width:100%;height:902px;">
-
+<!--<img src = "fbr.jpg"class="base" style="width:100%;height:902px;">-->
+<p class= "bb">
+<img src = "battle-royale-button.png" style="width:246px;height:59px;">
+</p>
+<p class= "bc">
+    <img src = "creative-button.png"class="bbimg" style="width:180px;height:70px;">     
+</p>
+</div>
     
     
 <div class="container">    
-<img src = "battle-royale-button.png"class="bbimg" style="width:246px;height:59px;">    
+<!--<img src = "battle-royale-button.png"class="bbimg" style="width:246px;height:59px;">    -->
 </div> 
     
  <div class="overlay">
  <img src = "yellow-battle-royale-button.png"class="bbyimg" style="width:273px;height:80px;">   
     </div>   
     
-<img src = "creative-button.png"class="bbimg" style="width:180px;height:70px;">     
+
  <div class="overlay">
 <img src = "yellow-creative-button.png"class="bcyimg" style="width:173px;height:66px;"> 
  </div>
