@@ -244,11 +244,8 @@
  
           var manager = new THREE.LoadingManager();
           manager.onProgress = function ( item, loaded, total ) {
- 
               console.log( item, loaded, total );
- 
           };
- 
           var textureLoader = new THREE.TextureLoader( manager );
 //          var texture = textureLoader.load( '../../data/data/UV_Grid_Sm.jpg' );
             var texture = textureLoader.load( '../../data/data/lchun/lantern_text.png' );
@@ -259,39 +256,29 @@
                   console.log( Math.round(percentComplete, 2) + '% downloaded' );
               }
           };
- 
           var onError = function ( xhr ) {
           };
- 
           var loader = new THREE.OBJLoader( manager );
 //          loader.load( '../../data/data/male02/male02.obj', function ( object ) {             
           loader.load( '../../data/data/lchun/lantern.obj', function ( object ) {
- 
               object.traverse( function ( child ) {
- 
                   if ( child instanceof THREE.Mesh ) {
- 
                       child.material.map = texture;
- 
                   }
- 
               } );
- 
   					object.position.y = - 95;
   					scene.add( object );
-              object.scale.set(50, 50, 50);
+              object.scale.set(5, 5, 5);
                   arWorldRoot.add( object );
- 
           }, onProgress, onError );
  
           //end obj code
          ///////////////////////////////////////////////////////////
- 
- //
-         //////////FROM FBX IMPORT
-         stats = new Stats();
-         container.appendChild( stats.dom );
-
+// 
+//         //////////FROM FBX IMPORT
+//         stats = new Stats();
+//         container.appendChild( stats.dom );
+//
 
 
 
@@ -327,7 +314,6 @@
         })
 
     animate();
-
         function animate() {
 				requestAnimationFrame( animate );
 				if ( mixers.length > 0 ) {
@@ -336,7 +322,6 @@
 					}
 				}
 				renderer.render( scene, camera );
-//				stats.update();
+				stats.update();
 			}
-
 </script></body>
