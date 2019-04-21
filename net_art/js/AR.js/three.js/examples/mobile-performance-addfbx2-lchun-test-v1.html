@@ -259,7 +259,7 @@
           var onError = function ( xhr ) {
           };
           var loader = new THREE.OBJLoader( manager );
-//          loader.load( '../../data/data/male02/male02.obj', function ( object ) {             
+//        loader.load( '../../data/data/male02/male02.obj', function ( object ) {             
           loader.load( '../../data/data/lchun/lantern.obj', function ( object ) {
               object.traverse( function ( child ) {
                   if ( child instanceof THREE.Mesh ) {
@@ -269,6 +269,7 @@
   					object.position.y = 0;
   					scene.add( object );
               object.scale.set(100, 100, 100);
+              console.log("are you working?");
                   arWorldRoot.add( object );
           }, onProgress, onError );
  
