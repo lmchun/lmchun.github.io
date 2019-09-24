@@ -33,9 +33,7 @@ p {
   border-radius:10px;
 }
 
-a:hover {
-	
-}
+
 
 .flex{
   display:flex;
@@ -68,6 +66,16 @@ img{
   border-radius:15px;
 }
 
+
+.logo{
+
+  font-size:20px; 
+  text-align:center; 
+  padding-top: 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
 /*COLOR PALETTES:
 -pinky color: #bfb6bb;
 -gray blue color: #8797a6;
@@ -95,8 +103,6 @@ img{
   width:300px;
 }
 
-
-.headimg1{
 
 
 }
@@ -139,11 +145,11 @@ video hover with js*/
   border:solid 3px #61737880;
   border-radius:10px;
   background: #61737880;
-
+  font-family: 'Montserrat', sans-serif;
   display: flex;
   
  
-  justify-content: flex-end;
+  justify-content: space-around;
 }
 
 .navigation a {
@@ -153,22 +159,6 @@ video hover with js*/
   color: AliceBlue;
 }
 
-.navigation a:hover {
-  background: darken(617378, 2%);
-
-}
-
-  .navigation a { 
-    text-align: center; 
-    padding: 10px;
-    border-top: 1px solid rgba(255,255,255,0.3); 
-    border-bottom: 1px solid rgba(0,0,0,0.1); 
-  }
-
-  
-  .navigation li:last-of-type a {
-    border-bottom: none;
-  }
 }
 
 
