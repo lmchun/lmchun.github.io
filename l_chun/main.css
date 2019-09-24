@@ -23,9 +23,12 @@ body {
 
 h1 {
 	color: bisque;
-/*	text-align: center;*/
+font-family: 'Lato', sans-serif;
 }
 
+h2{
+  font-family: 'Lato', sans-serif;
+}
 
 p {
 	background-color: #b4bfbd;
@@ -161,4 +164,5 @@ video hover with js*/
 
 }
 
+/*________________*/
 
