@@ -1,0 +1,195 @@
+/*TABLE OF CONTENT 
+
+
+
+
+
+
+
+
+
+*/
+
+
+
+body {
+	background-color: #8797a6;
+	font-family: verdana;
+	display: block;
+	text-align: center;
+}
+
+
+h1 {
+	color: bisque;
+/*	text-align: center;*/
+}
+
+
+p {
+	background-color: #b4bfbd;
+  border:solid 3px #b4bfbd;
+  border-radius:10px;
+}
+
+a:hover {
+	
+}
+
+.flex{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.flexbox_gallery{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content:center;
+}
+
+img{
+  margin:10px;
+  transition: all 0.3s;
+}
+
+.imgmain:hover{
+   transform:scale(1.1);
+}
+
+.banner{
+  border: solid 3px white;
+  position: relative;
+  top: 50px;
+  width: 400px;
+  margin: 0 auto;
+  /*the more px the more circle the less pixels the more square*/
+  border-radius:15px;
+}
+
+/*COLOR PALETTES:
+-pinky color: #bfb6bb;
+-gray blue color: #8797a6;
+-greeny teal color: #b4bfbd; the p background
+-blackish color: #272b2b; this is currently the background color
+-bluely gray color: #617378; this is currently the navigatation background color
+*/
+
+.imgmain{
+  /*max-height:1000px: 
+  min-height: 100px;
+  min-width: 100px;
+  max-width: 1000px;*/
+
+}
+
+.imgselect{
+    width:80%;
+    border:solid 10px #272b2b;
+    
+}
+
+.big{
+  height:300px;
+  width:300px;
+}
+
+
+.headimg1{
+
+
+}
+/*_______________________________________________________*/
+/*https://gist.github.com/adamloving/ee4d980e3de2fc125207
+video hover with js*/
+  .viewport {
+      position: relative;
+      width: 300px;
+      height: 300px;
+    }
+    .viewport:hover img {
+      opacity: 1;
+    }
+    .viewport:hover video {
+      opacity: 1;
+    }
+   /* img {
+      height: 100%;
+      width: 100%;
+      opacity: 1;
+      border-radius: 50%;
+    }*/
+    .fade {
+      transition: opacity .5s ease-in-out;
+    }
+    video {
+      height: 500px;
+      width: 500px;
+      display:flex;
+    }
+/*______________________________________________________-*/
+
+
+
+/* this is the code I want to replace this with
+https://codepen.io/lmchun/pen/qBWMQaR*/
+/*NAVIGATION*/
+@import "compass/css3";
+
+.navigation {
+  list-style: none;
+  margin: 0; 
+  border:solid 3px #61737880;
+  border-radius:10px;
+  background: #61737880;
+
+  display: flex;
+  
+  -webkit-flex-flow: row wrap;
+  justify-content: flex-end;
+}
+
+.navigation a {
+  text-decoration: none;
+  display: block;
+  padding: 1em;
+  color: AliceBlue;
+}
+
+.navigation a:hover {
+  background: darken(617378, 2%);
+
+}
+/* this is a media query*/
+@media all and (max-width: 800px) {
+  .navigation {
+    justify-content: space-around;
+  }
+}
+
+@media all and (max-width: 600px) {
+  .navigation {
+    -webkit-flex-flow: column wrap;
+    flex-flow: column wrap;
+    padding: 0;
+  }
+  
+  .navigation a { 
+    text-align: center; 
+    padding: 10px;
+    border-top: 1px solid rgba(255,255,255,0.3); 
+    border-bottom: 1px solid rgba(0,0,0,0.1); 
+  }
+
+  
+  .navigation li:last-of-type a {
+    border-bottom: none;
+  }
+}
+
+
+.butterfly{
+  
+}
+
+

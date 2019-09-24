@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link href="main.css" rel="stylesheet" type="text/css">	
+	<meta charset="UTF-8">
+	<title>Lauren Chun</title>
+	<script>
+      var viewport = document.getElementsByClassName('viewport')[0]
+      var video = document.getElementById('video')
+      viewport.addEventListener('mouseover', function() { video.play() }, false);
+      viewport.addEventListener('mouseout', function() { video.pause() }, false);
+    </script>
+</head>
+<body>
+	<ul class="navigation">
+	<li>	Lauren Chun</li>
+  <li><a href="index.html">3D Art</a></li>
+<!--   <li><a href="#">Programming</a></li> -->
+  <li><a href="m1.html">Artist Statement</a></li>
+  <li><a href="contact.html">Contact</a></li>
+</ul>
+
+	<div class="flexbox_gallery">
+		<a href="p1.html"> <img src="_img/lamp/tnlamp2.jpg" class="imgmain big"></a>
+		<a href="p2.html"><img src="_img/garden_of_people/elaine-flower.png" class="imgmain big"></a>
+		<img src="_img/flowerlight/tnflower.jpg" class="imgmain big">
+		<img src="_img/bee/tnbee.jpg" class="imgmain big videohover">
+		<video controls class="imgmain big">
+  <source src="_img/water_animation/tnwater.mp4" type="video/mp4" >
+  
+  Your browser does not support the video tag.
+</video>
+	<!--  <div class="viewport">
+      <video id="video" class="fade imgmain big">
+        <source src="_img/water_animation/tnwater.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+      </video>
+    </div> -->
+		<img src="_img/bee/tnbee.jpg" class="imgmain big">
+		<img src="_img/bee/tnbee.jpg" class="imgmain big">
+		<img src="_img/bee/tnbee.jpg" class="imgmain big">
+		
+	</div>
+</body>
+</html>
