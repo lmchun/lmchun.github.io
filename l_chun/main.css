@@ -94,7 +94,7 @@ img{
 
 .headimg1{
   margin-top: 30px;
-  background-image: url(_img/lamp/lamp_scene1.jpeg);
+  background-image: url(img/lamp/lamp_scene1.jpeg);
   background-repeat:no-repeat;
   padding: 250px;
   flex-wrap:nowrap;
@@ -104,7 +104,7 @@ img{
 
 .headimg2{
   margin-top: 30px;
-  background-image: url(_img/garden_of_people/elaine-flower.png);
+  background-image: url(img/garden_of_people/elaine-flower.png);
   background-repeat:no-repeat;
   padding: 250px;
   flex-wrap:nowrap;
