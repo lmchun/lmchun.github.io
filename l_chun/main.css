@@ -166,3 +166,35 @@ video hover with js*/
 
 /*________________*/
 
+
+.container {
+  width: 1200px;
+  /*we did not define the height*/
+  margin: 0 auto;
+  background-color: LightSlateGray;
+  /*fuck this is the BACKGROUND OF THE VIDEO SELECION PAGE
+  main container*/
+  box-sizing: border-box;
+  padding: 0 40px;
+  /*we actually don't want padding*/
+}
+
+.item_container {
+  background-color: CadetBlue;
+  /*this is the box around the video, the text is on it*/
+  box-sizing: border-box;
+  min-height: 300px;
+  padding: 20px;
+  margin-bottom: 40px;
+  clear: both;
+}
+
+.item_left{
+  width:450px;
+  margin-right: 30px;
+  }
+
+.item_right{
+  width:550px;
+  margin-right: 0px;
+}
