@@ -13,7 +13,7 @@
 
 
 body {
-	background-color: #8797a6;
+	background-image:linear-gradient(-90deg, #8797a6,#b4bfbd, #617378, #b4bfbd);
 	font-family: verdana;
 	display: block;
 	text-align: center;
@@ -130,11 +130,7 @@ video hover with js*/
 /*______________________________________________________-*/
 
 
-
-/* this is the code I want to replace this with
-https://codepen.io/lmchun/pen/qBWMQaR*/
 /*NAVIGATION*/
-@import "compass/css3";
 
 .navigation {
   list-style: none;
@@ -145,7 +141,7 @@ https://codepen.io/lmchun/pen/qBWMQaR*/
 
   display: flex;
   
-  -webkit-flex-flow: row wrap;
+ 
   justify-content: flex-end;
 }
 
@@ -160,20 +156,7 @@ https://codepen.io/lmchun/pen/qBWMQaR*/
   background: darken(617378, 2%);
 
 }
-/* this is a media query*/
-@media all and (max-width: 800px) {
-  .navigation {
-    justify-content: space-around;
-  }
-}
 
-@media all and (max-width: 600px) {
-  .navigation {
-    -webkit-flex-flow: column wrap;
-    flex-flow: column wrap;
-    padding: 0;
-  }
-  
   .navigation a { 
     text-align: center; 
     padding: 10px;
@@ -185,11 +168,6 @@ https://codepen.io/lmchun/pen/qBWMQaR*/
   .navigation li:last-of-type a {
     border-bottom: none;
   }
-}
-
-
-.butterfly{
-  
 }
 
 
