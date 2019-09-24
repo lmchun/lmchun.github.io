@@ -24,6 +24,7 @@ body {
 h1 {
 	color: bisque;
 font-family: 'Lato', sans-serif;
+  font-size:50px;
 }
 
 h2{
@@ -36,7 +37,11 @@ p {
   border-radius:10px;
 }
 
-
+.text{
+  padding: 10px;
+  margin-left: 90px;
+  margin-right: 90px;
+}
 
 .flex{
   display:flex;
@@ -49,7 +54,16 @@ p {
   flex-wrap: wrap;
   justify-content:center;
 }
-
+/*
+custom google fonts:;
+font-family: 'Chilanka', cursive;
+font-family: 'Gayathri', sans-serif;
+font-family: 'Hepta Slab', serif; like a typewriter
+font-family: 'Lato', sans-serif;
+font-family: 'Livvic', sans-serif;
+font-family: 'Montserrat', sans-serif;amily: 'Manjari', sans-serif;
+font-f
+*/
 img{
   margin:10px;
   transition: all 0.3s;
@@ -78,7 +92,25 @@ img{
   font-family: 'Montserrat', sans-serif;
 }
 
+.headimg1{
+  margin-top: 30px;
+  background-image: url(_img/lamp/lamp_scene1.jpeg);
+  background-repeat:no-repeat;
+  padding: 250px;
+  flex-wrap:nowrap;
+  background-size:100%;
+  text-align:left;
+}
 
+.headimg2{
+  margin-top: 30px;
+  background-image: url(_img/garden_of_people/elaine-flower.png);
+  background-repeat:no-repeat;
+  padding: 250px;
+  flex-wrap:nowrap;
+  background-size:100%;
+  text-align:left;
+}
 /*COLOR PALETTES:
 -pinky color: #bfb6bb;
 -gray blue color: #8797a6;
@@ -88,11 +120,7 @@ img{
 */
 
 .imgmain{
-  /*max-height:1000px: 
-  min-height: 100px;
-  min-width: 100px;
-  max-width: 1000px;*/
-
+  border-radius: 5px;
 }
 
 .imgselect{
@@ -106,9 +134,21 @@ img{
   width:300px;
 }
 
+.imgcrop1{
+   object-fit: cover;
+  object-position:60% 0;
 
-
+  width: 500px;
+  height: 350px;
 }
+
+/*.imgcrop2{
+   object-fit: cover;
+  object-position:60% 0;
+
+  width: 500px;
+  height: 350px;
+}*/
 /*_______________________________________________________*/
 /*https://gist.github.com/adamloving/ee4d980e3de2fc125207
 video hover with js*/
@@ -166,22 +206,16 @@ video hover with js*/
 
 /*________________*/
 
-
-.container {
-  width: 1200px;
-  /*we did not define the height*/
+.slideshow{
+  display:none;
+}
+.maincontainer {
   margin: 0 auto;
-  background-color: LightSlateGray;
-  /*fuck this is the BACKGROUND OF THE VIDEO SELECION PAGE
-  main container*/
   box-sizing: border-box;
-  padding: 0 40px;
-  /*we actually don't want padding*/
+  display: flex;
 }
 
-.item_container {
-  background-color: CadetBlue;
-  /*this is the box around the video, the text is on it*/
+.subcontainer {
   box-sizing: border-box;
   min-height: 300px;
   padding: 20px;
@@ -189,12 +223,13 @@ video hover with js*/
   clear: both;
 }
 
-.item_left{
-  width:450px;
-  margin-right: 30px;
+.containleft{
+ padding-left: 100px;
+ float:left;
   }
 
-.item_right{
-  width:550px;
-  margin-right: 0px;
+.containright{
+  padding-right: 100px;
+  float:right;
+  text-align:left;
 }
