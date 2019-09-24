@@ -13,7 +13,8 @@
 
 
 body {
-	background-image:linear-gradient(-90deg, #8797a6,#b4bfbd, #617378, #b4bfbd);
+  background-color:#8797a6;
+	/*background-image:linear-gradient(-90deg, #8797a6,#b4bfbd, #617378, #b4bfbd);*/
 	font-family: verdana;
 	display: block;
 	text-align: center;
