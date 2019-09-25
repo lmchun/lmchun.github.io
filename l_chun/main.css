@@ -18,6 +18,7 @@ body {
 	font-family: verdana;
 	display: block;
 	text-align: center;
+
 }
 
 
@@ -32,9 +33,11 @@ h2{
 }
 
 p {
-	background-color: #b4bfbd;
-  border:solid 3px #b4bfbd;
+  /*#ceddeb color of original background*/
+	background-color: white;
+  border:solid 3px white;
   border-radius:10px;
+  color:#272b2b;
 }
 
 .text{
@@ -227,7 +230,6 @@ body{
 .navigation {
   list-style: none;
   margin: 0; 
-/*   border:solid 3px #61737880; */
   border-radius:10px;
   background: white;
   font-family: 'Montserrat', sans-serif;
