@@ -181,10 +181,6 @@ video hover with js*/
 
 
 /*NAVIGATION*/
-
-body{
-/*     background-color:#8797a6; */
-}
 .dropbtn {
   background-color: white;
   color: white;
@@ -232,8 +228,6 @@ body{
   background: white;
   font-family: 'Montserrat', sans-serif;
   display: flex;
-  
- 
   justify-content: space-around;
 }
 
@@ -244,6 +238,32 @@ body{
   color: Black;
 }
 
+
+/*old navigation*/
+/*.navigation {
+  list-style: none;
+  margin: 0; 
+  /*border:solid 3px #61737880;*/
+  /*
+  border:solid 3px white;
+  border-radius:10px;
+  /*background: #61737880;*/
+  /*
+  background: white;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  
+ 
+  justify-content: space-around;
+}
+*/
+/*.navigation a {
+  text-decoration: none;
+  display: block;
+  padding: 1em;
+  color: SlateGrey;
+}
+*/
 
 
 /*________________*/
