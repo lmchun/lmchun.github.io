@@ -12,9 +12,11 @@
 
 */
 body {
+  /*background-color:#8797a6;*/
 	font-family: verdana;
 	display: block;
 	text-align: center;
+
 }
 
 
@@ -30,7 +32,18 @@ h2{
 }
 
 p {
- 
+  /*#ceddeb color of original background*/
+	/*background-color: #ceddeb;
+  border:solid 3px #ceddeb;
+  border-radius:10px;
+  color:#272b2b;*/
+}
+.p1 {
+  /*#ceddeb color of original background*/
+  /*background-color: #f5ebf0;
+  border:solid 3px #f5ebf0;
+  border-radius:10px;
+  color:#272b2b;*/
 }
 
 .text{
@@ -71,7 +84,8 @@ img{
 
 .logo{
   font-size:20px; 
-  text-align:left; 
+  text-align:center; 
+  padding-top: 0px;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -209,6 +223,8 @@ video hover with js*/
 .navigation {
   list-style: none;
   margin: 0; 
+  border-radius:10px;
+  background: white;
   font-family: 'Montserrat', sans-serif;
   display: flex;
   justify-content:flex-end;
