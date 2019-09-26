@@ -148,9 +148,11 @@ img{
   width: 700px;
  /* height: 350px;*/
 }
+
 /*_______________________________________________________*/
 /*https://gist.github.com/adamloving/ee4d980e3de2fc125207
 video hover with js*/
+
   .viewport {
       position: relative;
       width: 300px;
@@ -181,9 +183,6 @@ video hover with js*/
 
 /*NAVIGATION*/
 
-body{
-/*     background-color:#8797a6; */
-}
 .dropbtn {
   background-color: white;
   color: white;
