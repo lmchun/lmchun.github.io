@@ -8,10 +8,9 @@
 
 
 
+
+
 */
-
-
-
 body {
   background-color:#8797a6;
 	/*background-image:linear-gradient(-90deg, #8797a6,#b4bfbd, #617378, #b4bfbd);*/
@@ -30,6 +29,7 @@ font-family: 'Lato', sans-serif;
 
 h2{
   font-family: 'Lato', sans-serif;
+  color:#e3caac;
 }
 
 p {
@@ -83,22 +83,11 @@ img{
    transform:scale(1.1);
 }
 
-.banner{
-  border: solid 3px white;
-  position: relative;
-  top: 50px;
-  width: 400px;
-  margin: 0 auto;
-  /*the more px the more circle the less pixels the more square*/
-  border-radius:15px;
-}
-
-
 .logo{
 
   font-size:20px; 
   text-align:center; 
-  padding-top: 10px;
+  padding-top: 0px;
   font-family: 'Montserrat', sans-serif;
 }
 
@@ -152,13 +141,13 @@ img{
   height: 350px;
 }
 
-/*.imgcrop2{
+.imgcrop2{
    object-fit: cover;
   object-position:60% 0;
 
-  width: 500px;
-  height: 350px;
-}*/
+  width: 700px;
+ /* height: 350px;*/
+}
 /*_______________________________________________________*/
 /*https://gist.github.com/adamloving/ee4d980e3de2fc125207
 video hover with js*/
