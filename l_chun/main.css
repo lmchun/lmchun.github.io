@@ -34,8 +34,15 @@ h2{
 
 p {
   /*#ceddeb color of original background*/
-	background-color: white;
-  border:solid 3px white;
+	background-color: #ceddeb;
+  border:solid 3px #ceddeb;
+  border-radius:10px;
+  color:#272b2b;
+}
+.p1 {
+  /*#ceddeb color of original background*/
+  background-color: #f5ebf0;
+  border:solid 3px #f5ebf0;
   border-radius:10px;
   color:#272b2b;
 }
