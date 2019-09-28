@@ -83,25 +83,6 @@ a{
    color:black;
 }
 
-.headimg1{
-  margin-top: 30px;
-  background-image: url(img/lamp/lamp_scene1.jpeg);
-  background-repeat:no-repeat;
-  padding: 250px;
-  flex-wrap:nowrap;
-  background-size:100%;
-  text-align:left;
-}
-
-.headimg2{
-  margin-top: 30px;
-  background-image: url(img/garden_of_people/elaine-flower.png);
-  background-repeat:no-repeat;
-  padding: 250px;
-  flex-wrap:nowrap;
-  background-size:100%;
-  text-align:left;
-}
 /*COLOR PALETTES:
 -pinky color: #bfb6bb;
 -gray blue color: #8797a6;
@@ -116,7 +97,7 @@ a{
 
 .imgselect{
     width:80%;
-    border:solid 10px #272b2b;
+    border:solid 50px #272b2b;
     
 }
 
@@ -139,6 +120,30 @@ a{
 
   width: 700px;
  /* height: 350px;*/
+}
+
+.ascent-band{
+
+}
+
+.headimg1{
+  margin-top: 30px;
+  background-image: url(img/lamp/lamp_scene1.jpeg);
+  background-repeat:no-repeat;
+  padding: 250px;
+  flex-wrap:nowrap;
+  background-size:100%;
+  text-align:left;
+}
+
+.headimg2{
+  margin-top: 30px;
+  background-image: url(img/garden_of_people/elaine-flower.png);
+  background-repeat:no-repeat;
+  padding: 250px;
+  flex-wrap:nowrap;
+  background-size:100%;
+  text-align:left;
 }
 
 /*_______________________________________________________*/
@@ -245,11 +250,7 @@ video hover with js*/
 .slideshow{
   display:none;
 }
-.maincontainer {
-  margin: 0 auto;
-  box-sizing: border-box;
-  display: flex;
-}
+
 
 .subcontainer {
   box-sizing: border-box;
@@ -257,6 +258,7 @@ video hover with js*/
   padding: 20px;
   margin-bottom: 40px;
   clear: both;
+  display:flex;
 }
 
 .containleft{
@@ -267,5 +269,5 @@ video hover with js*/
 .containright{
   padding-right: 100px;
   float:right;
-  text-align:left;
 }
+
