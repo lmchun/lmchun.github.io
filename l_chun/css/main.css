@@ -26,12 +26,9 @@ font-family: 'Lato', sans-serif;
 
 h2{
   font-family: 'Lato', sans-serif;
-  #8797a6
+  color: #8797a6;
 }
 
-p {
- 
-}
 
 .text{
   padding: 10px;
@@ -50,6 +47,7 @@ p {
   flex-wrap: wrap;
   justify-content:center;
 }
+
 /*
 custom google fonts:;
 font-family: 'Chilanka', cursive;
@@ -58,8 +56,9 @@ font-family: 'Hepta Slab', serif; like a typewriter
 font-family: 'Lato', sans-serif;
 font-family: 'Livvic', sans-serif;
 font-family: 'Montserrat', sans-serif;amily: 'Manjari', sans-serif;
-font-f
+
 */
+
 img{
   margin:10px;
   transition: all 0.3s;
@@ -119,32 +118,13 @@ a{
   object-position:60% 0;
 
   width: 700px;
- /* height: 350px;*/
+  height: 350px;
 }
 
-.ascent-band{
-
+.accent-band{
+	background-color:slategrey;
 }
 
-.headimg1{
-  margin-top: 30px;
-  background-image: url(img/lamp/lamp_scene1.jpeg);
-  background-repeat:no-repeat;
-  padding: 250px;
-  flex-wrap:nowrap;
-  background-size:100%;
-  text-align:left;
-}
-
-.headimg2{
-  margin-top: 30px;
-  background-image: url(img/garden_of_people/elaine-flower.png);
-  background-repeat:no-repeat;
-  padding: 250px;
-  flex-wrap:nowrap;
-  background-size:100%;
-  text-align:left;
-}
 
 /*_______________________________________________________*/
 /*https://gist.github.com/adamloving/ee4d980e3de2fc125207
@@ -161,12 +141,7 @@ video hover with js*/
     .viewport:hover video {
       opacity: 1;
     }
-   /* img {
-      height: 100%;
-      width: 100%;
-      opacity: 1;
-      border-radius: 50%;
-    }*/
+   
     .fade {
       transition: opacity .5s ease-in-out;
     }
