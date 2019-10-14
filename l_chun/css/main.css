@@ -49,14 +49,13 @@ h2{
 }
 
 /*
-custom google fonts:;
+custom google fonts
 font-family: 'Chilanka', cursive;
 font-family: 'Gayathri', sans-serif;
 font-family: 'Hepta Slab', serif; like a typewriter
 font-family: 'Lato', sans-serif;
 font-family: 'Livvic', sans-serif;
 font-family: 'Montserrat', sans-serif;amily: 'Manjari', sans-serif;
-
 */
 
 img{
@@ -153,7 +152,7 @@ video hover with js*/
 /*______________________________________________________-*/
 
 
-/*NAVIGATION*/
+/*NAVIGATION: https://codepen.io/HugoGiraudel/pen/pkwqH*/
 
 .dropbtn {
   background-color: white;
@@ -220,7 +219,7 @@ video hover with js*/
 
 }
 
-/*________________*/
+/*_________________________________________*/
 .subcontainer {
   box-sizing: border-box;
   min-height: 300px;
