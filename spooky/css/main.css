@@ -1,0 +1,98 @@
+/*TABLE OF CONTENT
+
+
+Image Distortion CodePen: pimskie
+https://codepen.io/pimskie/pen/gOObEBx
+
+Hover over to link Codepen: kirk grover
+https://codepen.io/kirkgrover/pen/mjbes
+
+*/
+body{
+	background:black;
+}
+
+.text{
+font-family: 'Shadows Into Light', cursive;	
+color:white;
+font-size: 4rem;
+text-align: center;
+}
+
+/*_____________main grid: made from gridgarden game and inclass tutorial from Art 175 Craig__________*/
+
+.framegrid{
+	  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px,1fr));
+  grid-auto-rows: 1fr;
+  grid-gap: 1rem;
+  grid-auto-flow: dense;
+
+
+}
+
+li:nth-child(1), li:nth-child(2),
+li:nth-child(3){
+	grid-column: span 4;
+}
+
+/*______________-end of main grid-___________________________*/
+
+/*_______________-start image scale down-_____________________*/
+
+.spoogirl{
+	
+
+}
+
+/*_________________-end image scale down-_____________________*/
+
+
+
+
+/*______beginning of image distort css_____________________*/
+/*html,
+body {
+  margin: 0;
+  padding: 0;
+
+  overflow: hidden;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;*/
+
+
+  /*________________end of image distort__________________________*/
+
+
+  /*_______________start of image hover change css___________________________*/
+
+  
+/* BACKGROUND-LINK */
+.background-link1 {
+  /* The width and height should match the dimensions of the image. */
+/*   width: 2600px;
+  height: 195px; */
+  display: flex;
+
+  -webkit-transition: all .4s;
+  transition: all .4s;
+  /* the rollover image goes here */
+  background: url('img/spook.jpg') no-repeat;
+}
+.background-link1 img {
+  opacity: 1;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+.background-link1:hover img {
+  opacity: 0;
+}
+
+  /*________________end of image hover change css__________________________*/
