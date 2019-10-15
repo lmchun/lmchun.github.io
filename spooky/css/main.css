@@ -7,9 +7,20 @@ https://codepen.io/pimskie/pen/gOObEBx
 Hover over to link Codepen: kirk grover
 https://codepen.io/kirkgrover/pen/mjbes
 
+
+Images:
+-Child
+
+
+-Woman
+https://www.amazon.com/Halloween-Lenticular-Changing-Gentleman-Decorations/dp/B07545Z2SQ
+
+-Man
+https://images-na.ssl-images-amazon.com/images/I/61nEXdjDnIL._AC_SL1398_.jpg
 */
 body{
-	background:black;
+	/*other color idea #01051e*/
+	background: #00010b;
 }
 
 .text{
@@ -40,7 +51,7 @@ li:nth-child(3){
 
 /*_______________-start image scale down-_____________________*/
 
-.spoogirl{
+.spoogirledit{
 	
 
 }
@@ -74,17 +85,14 @@ body {
   /*_______________start of image hover change css___________________________*/
 
   
-/* BACKGROUND-LINK */
 .background-link1 {
-  /* The width and height should match the dimensions of the image. */
-/*   width: 2600px;
-  height: 195px; */
+/*there was height and width but I did not want to limit it so I deleted it to make it responsive*/
   display: flex;
 
   -webkit-transition: all .4s;
   transition: all .4s;
   /* the rollover image goes here */
-  background: url('img/spook.jpg') no-repeat;
+  background: url('../img/spook.jpg') no-repeat;
 }
 .background-link1 img {
   opacity: 1;
@@ -94,5 +102,46 @@ body {
 .background-link1:hover img {
   opacity: 0;
 }
+
+/*___________________________________________________________________________*/
+
+.background-link2 {
+/*there was height and width but I did not want to limit it so I deleted it to make it responsive*/
+  display: flex;
+
+  -webkit-transition: all .4s;
+  transition: all .4s;
+  /* the rollover image goes here */
+  background: url('../img/spook_1.jpg') no-repeat;
+}
+.background-link2 img {
+  opacity: 1;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+.background-link2:hover img {
+  opacity: 0;
+}
+
+
+.background-link3 {
+/*there was height and width but I did not want to limit it so I deleted it to make it responsive*/
+/*but it gets cut off.. :( */
+  display: flex;
+
+  -webkit-transition: all .4s;
+  transition: all .4s;
+  background: url('../img/spook_2.jpg') no-repeat;
+}
+.background-link3 img {
+  opacity: 1;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+.background-link3:hover img {
+  opacity: 0;
+}
+
+
 
   /*________________end of image hover change css__________________________*/
