@@ -17,51 +17,130 @@ https://www.amazon.com/Halloween-Lenticular-Changing-Gentleman-Decorations/dp/B0
 
 -Man
 https://images-na.ssl-images-amazon.com/images/I/61nEXdjDnIL._AC_SL1398_.jpg
+
+-man_axe
+https://www.halloweenconnection.com/images/products/hmuh.jpg
+
+-man_hat
+http://lanetang.me/wp-content/uploads/2019/06/halloween-lenticular-portraits-details-about-uncle-haunted-memories-changing-portrait-zombie-home-improvement-contractor-license-ny.jpg
+
+-house reference
+https://abc7news.com/society/be-a-live-in-nanny-at-a-haunted-house/2107132/
+
+https://www.captivatinghouses.com/category/style/gothic-revival/
+
+
+-monster:
+
+https://www.stickpng.com/img/download/5c14ec146ac52602a4427f89;
+
+-sky reference:https://www.youtube.com/watch?v=PwWMf15i3Uk
+
+
+-wallpaper: https://wallpapersafari.com/w/8gbS9A
+
+
+https://cdn.shopify.com/s/files/1/1085/3020/products/hautned_boy_II.jpg?v=1571268934
+
+ghost:
+http://pngimg.com/uploads/ghost/ghost_PNG80.png
+
+vamp:https://wftogame.com/wp-content/uploads/vampire.png
+
+ghost:
+https://dlpng.com/png/4422277
+
+
+zombe:http://pngimg.com/uploads/zombie/zombie_PNG51.png
+
+alien:https://www.fourjay.org/myphoto/f/20/200195_aliens-png.png
+
+https://www.pngfly.com/png-4w2sp2/
+
+https://2e.aonprd.com/Images/Monsters/Wendigo.png
+
+https://www.pngfly.com/png-d0wzg0/download.html
 */
+
 body{
 	/*other color idea #01051e*/
 	background: #00010b;
-
+ 
 }
 
 .text{
 font-family: 'Shadows Into Light', cursive;	
 color:white;
 font-size: 4rem;
-text-align: center;
+margin: 0 auto;
 }
 
 /*_____________main grid: made from gridgarden game and inclass tutorial from Art 175 Craig__________*/
 
 .framegrid{
-	  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px,1fr));
-  grid-auto-rows: 1fr;
-  grid-gap: 1rem;
-/*  grid-auto-flow: dense;*/
+	 display:grid;
+  grid-template-columns:repeat(7, 1fr);
+/*   grid-template-columns:repeat(1fr 1fr 1fr);
+   this line is the same thing as the previous one, there is two ways of writing the same thing */
+  
+ /* grid-template-rows: 300px 300px 300px; */
+ grid-gap: 20px;
+/*   grid-template-areas:"side1 main main"
+                      "side2 main main"
+                      "side3 main main"; */
+/*  left side  */
+  grid-template-areas:"main1 main2 main3 main4 main5 main6 main7";
+                     
+}
+/* right side  */
 
 
+.main1{
+
+  grid-area: main1;
+
 }
-li{
-	list-style: none;
+
+
+.main2{
+
+  grid-area: main2;
+  
 }
-li:nth-child(1), li:nth-child(2),
-li:nth-child(3){
-	grid-column: span 4;
+
+
+.main3{
+
+  grid-area: main3;
+
 }
+
+.main4{
+
+  grid-area: main4;
+
+}
+.main5{
+
+  grid-area: main5;
+
+}
+
+.main6{
+
+  grid-area: main6;
+
+}
+
+
+.main7{
+
+  grid-area: main7;
+
+}
+
 
 /*______________-end of main grid-___________________________*/
-
-/*_______________-start image scale down-_____________________*/
-
-/*.girl-img{
-	object-fit: cover;
-	object-position: -20% 0;
-
-  width:500px;
-}*/
-
-/*_________________-end image scale down-_____________________*/
 
 
 
@@ -98,6 +177,9 @@ body {
   transition: all .4s;
   /* the rollover image goes here */
   background: url('../img/spook.jpg') no-repeat;
+    transform: rotate(-3deg);
+  transform-origin: 50% 0 0;
+  animation: 1s infinite pic;
 }
 .girl_envy img {
   opacity: 1;
@@ -110,6 +192,7 @@ body {
 
 /*___________________________________________________________________________*/
 
+/*___________________________________________________________________________*/
 .woman_pride{
 /*there was height and width but I did not want to limit it so I deleted it to make it responsive*/
   display: flex;
@@ -118,6 +201,9 @@ body {
   transition: all .4s;
   /* the rollover image goes here */
   background: url('../img/spook_1.jpg') no-repeat;
+    transform: rotate(-3deg);
+  transform-origin: 50% 0 0;
+  animation: 1s infinite pic;
 }
 .woman_pride img {
   opacity: 1;
@@ -128,25 +214,167 @@ body {
   opacity: 0;
 }
 
+/*____________________________________________*/
+/*____________________________________________*/
 
 .man_wrath{
-/*there was height and width but I did not want to limit it so I deleted it to make it responsive*/
-/*but it gets cut off.. :( */
   display: flex;
 
   -webkit-transition: all .4s;
   transition: all .4s;
   background: url('../img/spook_2.jpg') no-repeat;
+    transform: rotate(-3deg);
+  transform-origin: 50% 0 0;
+  animation: 1s infinite pic;
+
 }
 .man_wrath img {
   opacity: 1;
   -webkit-transition: all .4s;
   transition: all .4s;
+
 }
 .man_wrath:hover img {
   opacity: 0;
 }
 
+/*____________________________________________*/
+/*____________________________________________*/
+.man_lust{
+  display: flex;
 
+  -webkit-transition: all .4s;
+  transition: all .4s;
+  background: url('../img/spook_3.jpg') no-repeat;
+    transform: rotate(-3deg);
+  transform-origin: 50% 0 0;
+  animation: 1s infinite pic;
+}
+.man_lust img {
+  opacity: 1;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+.man_lust:hover img {
+  opacity: 0;
+}
+
+
+/*____________________________________________*/
+/*____________________________________________*/
+.man_sloth{
+  display: flex;
+
+  -webkit-transition: all .4s;
+  transition: all .4s;
+  background: url('../img/spook_4.jpg') no-repeat;
+    transform: rotate(-3deg);
+  transform-origin: 50% 0 0;
+  animation: 1s infinite pic;
+}
+.man_sloth img {
+  opacity: 1;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+.man_sloth:hover img {
+  opacity: 0;
+}
+/*____________________________________________*/
+.child_gluttony{
+  display: flex;
+
+  -webkit-transition: all .4s;
+  transition: all .4s;
+  background: url('../img/spook_5.jpg') no-repeat;
+    transform: rotate(-3deg);
+  transform-origin: 50% 0 0;
+  animation: 1s infinite pic;
+}
+.child_gluttony img {
+  opacity: 1;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+}
+.child_gluttony:hover img {
+  opacity: 0;
+}
+
+/*____________________________________________*/
+.child_greed{
+  display: flex;
+
+  -webkit-transition: all .4s;
+  transition: all .4s;
+  background: url('../img/spook_6.jpg') no-repeat;
+    transform: rotate(-3deg);
+  transform-origin: 50% 0 0;
+  animation: 1s infinite pic;
+}
+.child_greed img {
+  opacity: 1;
+  -webkit-transition: all .4s;
+  transition: all .4s;
+
+}
+.child_greed:hover img {
+  opacity: 0;
+}
 
   /*________________end of image hover change css__________________________*/
+
+
+
+/*https://codepen.io/john-cheesman/pen/xqnoGe*/
+
+.pic_kitty {
+  transform: rotate(-3deg);
+  transform-origin: 50% 0 0;
+  animation: 1s infinite pic;
+}
+
+@keyframes pic {
+
+    0% {
+        transform: rotate(-3deg);
+    }
+
+    50% {
+        transform: rotate(3deg);
+    }
+}
+
+/*end of the moving class for the picture frames*/
+
+.house{
+
+	width:1050%;
+}
+
+.port{
+
+  width:100%;
+  margin-left:350px;
+}
+
+
+.mon{
+
+  width:200%;
+   margin-left:350px;
+}
+
+.mon2{
+
+  width:100%;
+   margin-left:300px;
+}
+.sign{
+  margin-left:500px;
+}
+
+.mon3{
+
+  width:50%;
+   margin-left:350px;
+}

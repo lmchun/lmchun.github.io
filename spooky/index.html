@@ -1,61 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<link href="css/main.css" rel="stylesheet" type="text/css">	
-  <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light|Special+Elite|Ultra&display=swap" rel="stylesheet">
-	<meta charset="UTF-8">
-	<title>Pictures</title>
 
-  <script src="js/distort_mirror.js"></script>
+	<meta charset="utf-8">
+
+	<title>Parallax.js | Simple Example</title>
+
+	<!-- Behavioral Meta Data -->
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<link href="css/main.css" rel="stylesheet" type="text/css">	
+
+	<!-- Styles -->
+	<!-- <link rel="stylesheet" type="text/css" href="../assets/styles.css"/> -->
+
 </head>
 <body>
-<p class="text">
-Sins, Distortions of the Heart, which one will you heal?
-</p>
 
-<!--______________Begining of distorted image code__________________________________-->
-<!-- 
-<div> <canvas class="canvas js-canvas" width="500" height="500"></canvas>
+<background src="img/sky.jpg">
+<div class="framegrid">
+	<div id="container" class="container">
+		<div id="scene" class="scene">
+					<div data-depth="0.00"><img class="house"src="img/sky.jpg"></div>
+				<div data-depth="0.20"><img class="house" src="img/h1.png"></div>
+				<div data-depth="0.10"><img class="house" src="img/h2.png"></div>
+				<div data-depth="0.20"><img class="house" src="img/h3.png"></div>
+				<div data-depth="0.30"><img class="house" src="img/h4.png"></div>
+				<div data-depth="0.40"><img class="house" src="img/h7.png"></div>
+				<div data-depth="0.50"><img class="house" src="img/h6.png"></div>
+				<div data-depth="0.60"><img class="house" src="img/h5.png"></div>
+				<div data-depth="0.50"><img class="house" src="img/h8.png"></div>
+		</div>
+	</div>
 </div>
-<p>
-  <a href="#" class="background-link"> -->
-    <!-- the initial image goes here -->
-<!--    <img src="" />
-  </a>
-</p>
--->
-<!-- _______________END of distorted image code_____________________________--->
+<a href="hall.html"> <img class="sign" src=img/sign.png> </a>
 
 
-<ul class="framegrid">
-<li><a href="#" class="girl_envy" alt="a cute girl from the past"> <img src="img/norm.jpg"/>
-  	</a>
-</li>
-
-<li><a href="#" class="woman_pride" alt="an elegant lady from the past"> <img src="img/norm_1.jpg"/>
-  	</a>
-</li>
-
-<li><a href="#" class="man_wrath" alt="a proper man from the past"> <img src="img/norm_2.jpg"/>
-  	</a>
-</li>
-<!-- 
-
-<li><a href="#" class="background-link1" alt="a cute girl from the past"> <img src="img/norm.jpg"/>
-  	</a>
-</li>
-
-
-<li><a href="#" class="background-link1" alt="a cute girl from the past"> <img src="img/norm.jpg"/>
-  	</a>
-</li>
-</ul> -->
-
-<!-- <audio src="horse.mp3" type="audio/mpeg">
-Your browser does not support the audio element.
-</audio>
- -->
-
-
+<!-- https://github.com/wagerfield/parallax -->
+	<script src="js/parallax/parallax.js"></script>
+	<script>
+	var scene = document.getElementById('scene');
+	var parallax = new Parallax (scene);
+	</script>
+<!-- end of parallax -->
 </body>
 </html>
