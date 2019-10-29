@@ -65,7 +65,6 @@ https://www.pngfly.com/png-d0wzg0/download.html
 body{
 	/*other color idea #01051e*/
 	background: #00010b;
- 
 }
 
 .text{
@@ -79,98 +78,94 @@ margin: 0 auto;
 
 .framegrid{
 	 display:grid;
-  grid-template-columns:repeat(7, 1fr);
-/*   grid-template-columns:repeat(1fr 1fr 1fr);
-   this line is the same thing as the previous one, there is two ways of writing the same thing */
-  
- /* grid-template-rows: 300px 300px 300px; */
- grid-gap: 20px;
-/*   grid-template-areas:"side1 main main"
-                      "side2 main main"
-                      "side3 main main"; */
-/*  left side  */
-  grid-template-areas:"main1 main2 main3 main4 main5 main6 main7";
-                     
+   grid-template-columns:repeat(7, 1fr);
+   grid-gap: 20px;
+
+    /* long scrolling hallway  */
+  grid-template-areas:"main1 main2 main3 main4 main5 main6 main7";              
 }
-/* right side  */
+
 
 
 .main1{
-
   grid-area: main1;
-
 }
 
 
 .main2{
-
   grid-area: main2;
-  
 }
 
 
 .main3{
-
   grid-area: main3;
-
 }
 
 .main4{
-
   grid-area: main4;
-
 }
+
 .main5{
-
   grid-area: main5;
-
 }
 
 .main6{
-
   grid-area: main6;
-
 }
 
-
 .main7{
-
   grid-area: main7;
-
 }
 
 
 /*______________-end of main grid-___________________________*/
 
 
+.storygrid{
+display:grid;
+   grid-template-columns:repeat(2, 1fr);
+   grid-gap: 20px;
 
+    /* long scrolling hallway  */
+  grid-template-areas:"text_left pic_right"; 
 
-/*______beginning of image distort css_____________________*/
-/*html,
-body {
-  margin: 0;
-  padding: 0;
-
-  overflow: hidden;
 }
 
-.container {
-  width: 100vw;
-  height: 100vh;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;*/
+.text_left{
+  grid-area: text_left;
+}
 
 
-  /*________________end of image distort__________________________*/
+.pic_right{
+grid-area: "pic_right";
+}
+
+.housebox{
+  display:flex;
+  flex-wrap: wrap;
+
+} 
+
+.backsky{
+  object-fit: cover;
+  object-position: -20% 0;
+  repeat: no-repeat;
+
+  width: auto;
+  height: 550px;
+} 
 
 
-  /*_______________start of image hover change css___________________________*/
+.videobox{
+  display:flex;
+
+}  
+  /*_________________________start of image hover change css________________________________________*/
+
+
 
   
 .girl_envy{
-/*there was height and width but I did not want to limit it so I deleted it to make it responsive*/
   display: flex;
 
   -webkit-transition: all .4s;
@@ -195,7 +190,6 @@ body {
 
 /*___________________________________________________________________________*/
 .woman_pride{
-/*there was height and width but I did not want to limit it so I deleted it to make it responsive*/
   display: flex;
 
   -webkit-transition: all .4s;
@@ -334,12 +328,7 @@ body {
 
 /*https://codepen.io/john-cheesman/pen/xqnoGe*/
 
-.pic_kitty {
-  transform: rotate(-3deg);
-  transform-origin: 50% 0 0;
-  animation: 1s infinite pic;
-}
-
+/*this part is needed or else the the keyframes wont happen*/
 @keyframes pic {
 
     0% {
@@ -353,11 +342,21 @@ body {
 
 /*end of the moving class for the picture frames*/
 
-.house{
-
-	width:1050%;
+/*sign adjustment of space*/
+.sign{
+  margin-left:200px;
+  width:30%;
 }
 
+.videoport{
+ display:flex;
+  flex-wrap: wrap;
+  justify-content:space-between;
+  height: 500px;
+  width: 400px;
+}
+
+/*slight adjustments to the monster htmls*/
 .port{
 
   width:100%;
@@ -375,9 +374,6 @@ body {
 
   width:100%;
    margin-left:300px;
-}
-.sign{
-  margin-left:500px;
 }
 
 .mon3{

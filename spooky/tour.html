@@ -2,13 +2,18 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta http-equiv="refresh" content="20; url=http://example.com/">
+	<!-- this is an autoloader for 28secs https://stackoverflow.com/questions/27895424/auto-redirect-to-another-html-page -->
+	<meta http-equiv="refresh" content="28; url=hall.html">
+	<link href="css/main.css" rel="stylesheet" type="text/css">	
 	<title>Want to Tour our House?</title>
 </head>
 <body>
-	<!-- <video src=""> -->
-
-	<!--  -->
-
+	<!-- https://www.w3schools.com/tags/att_video_autoplay.asp for the autoplay -->
+<div class="videoport">	
+	<!--video autoplays on load  -->
+<video width="600" height="auto" controls autoplay>	
+	<source src="img/spooktrance.mp4" type="video/mp4">
+</video>
+</div>
 </body>
 </html>
