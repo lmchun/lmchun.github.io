@@ -4,7 +4,7 @@
 		<title>three.js webvr - ball shooter</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-		<link type="text/css" rel="stylesheet" href="main.css">
+		<link type="text/css" rel="stylesheet" href="css/main.css">
 		<!-- WebXR Device API (For Chrome M76+), expires 10/16/2019 -->
 		<meta http-equiv="origin-trial" content="AtWCPo0cZgy0zJDSYftemy7eZvmcwR5qy/4osFkMkLZ0ar6OYyKfbu93pjpxiOVzcWNIVxgoWoK8YtxCXeFSqgIAAABTeyJvcmlnaW4iOiJodHRwczovL3RocmVlanMub3JnOjQ0MyIsImZlYXR1cmUiOiJXZWJYUkRldmljZU03NiIsImV4cGlyeSI6MTU3MTE4Mzk5OX0=">
 	</head>
@@ -14,12 +14,12 @@
 			<a href="https://threejs.org" target="_blank" rel="noopener">three.js</a> webvr - ball shooter
 		</div>
 
-		<script src="js/vr/HelioWebXRPolyfill.js"></script>
+		<script src="js/HelioWebXRPolyfill.js"></script>
 
 		<script type="module">
-			import * as THREE from '../build/three.module.js';
-			import { BoxLineGeometry } from './jsm/geometries/BoxLineGeometry.js';
-			import { WEBVR } from './jsm/vr/WebVR.js';
+			import * as THREE from 'js/three.module.js';
+			import { BoxLineGeometry } from 'js/BoxLineGeometry.js';
+			import { WEBVR } from 'js/WebVR.js';
 			var camera, scene, renderer;
 			var controller1, controller2;
 			var room;
