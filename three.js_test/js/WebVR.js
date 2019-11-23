@@ -5,7 +5,7 @@
  * Based on @tojiro's vr-samples-utils.js
  */
 
-THREE.WEBVR = {
+WEBVR = {
 
 	createButton: function ( renderer, options ) {
 
