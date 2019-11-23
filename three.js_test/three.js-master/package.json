@@ -96,5 +96,8 @@
       "build/three.module.js"
     ],
     "directories": {}
+  },
+  "dependencies": {
+    "three": "^0.110.0"
   }
 }

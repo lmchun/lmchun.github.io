@@ -15,19 +15,22 @@
 		<script src="js/three.min.js"></script>
 		<script src="js/Detector.js"></script>
 		<script>
-
+//__________________________________________________________________//
+			
 			import {WEBVR} from './resources/threejs/r110/examples/jsm/vr/WebVR.js';
 
+//__________________________________________________________________//
+			
 			if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
 			
 			var camera, scene, renderer;
 			var geometry, material, mesh;
 
 			function setup() {
-
+//__________________________________________________________________//
 				renderer.vr.enabled = true;
   				document.body.appendChild(WEBVR.createButton(renderer));
-
+//__________________________________________________________________//
 				var W = window.innerWidth, H = window.innerHeight;
 				renderer = new THREE.WebGLRenderer();
 				renderer.setSize( W, H );
