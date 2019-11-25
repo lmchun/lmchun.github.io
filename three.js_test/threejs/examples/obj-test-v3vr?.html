@@ -8,34 +8,43 @@
 	</head>
 
 	<body>
-		
+		<!-- WEB VR -->
 	<!-- enables vr for polyfill basically to be able to port to any device -->
 		<script src="js/vr/HelioWebXRPolyfill.js"></script>
-		
+
 		<script type="module">
 			import * as THREE from '../build/three.module.js';
-
+			//WEB VR
 	//bottom line this is necessary to do webvr IMPORTANT IMPORTANT IMPORTANT!!  //
 			import { WEBVR } from './jsm/vr/WebVR.js';
 
 
 			//important to use the objs//
 			import { OBJLoader } from './jsm/loaders/OBJLoader.js';
-			var container;
+			// var container;
 			var camera, scene, renderer;
 			var mouseX = 0, mouseY = 0;
 			var windowHalfX = window.innerWidth / 2;
 			var windowHalfY = window.innerHeight / 2;
 			var object;
+			var room;
+			var count = 0;
+			var radius = 0.08;
+			var normal = new THREE.Vector3();
+			var relativeVelocity = new THREE.Vector3();
+			var clock = new THREE.Clock();
+
 			init();
 			animate();
+			
 			function init() {
-				container = document.createElement( 'div' );
+				//container = document.createElement( 'div' );
 
 				//this is used similar to the webvr thing so we probably dont need this
-				document.body.appendChild( container );
-				camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 1, 2000 );
-				camera.position.z = 250;
+				//document.body.appendChild( container );
+				camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.1, 10 );
+				//camera.position.z = 250;
+				
 				// scene
 				scene = new THREE.Scene();
 				var ambientLight = new THREE.AmbientLight( 0xcccccc, 0.4 );
