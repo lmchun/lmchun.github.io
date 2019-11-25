@@ -12,12 +12,12 @@
 	</head>
 	<body>
 		
-		<script src="js/three.min.js"></script>
+		<script src="../build/three.min.js"></script>
 		<script src="js/Detector.js"></script>
 		<script>
 //__________________________________________________________________//
-			
-			import {WEBVR} from './resources/threejs/r110/examples/jsm/vr/WebVR.js';
+			// what makes the webvr capable of working//
+			import { WEBVR } from './jsm/vr/WebVR.js';
 
 //__________________________________________________________________//
 			
@@ -28,9 +28,12 @@
 
 			function setup() {
 //__________________________________________________________________//
+	// important to place this or else no WEBVR button is made and cant be rendered//
 				renderer.vr.enabled = true;
   				document.body.appendChild(WEBVR.createButton(renderer));
 //__________________________________________________________________//
+
+
 				var W = window.innerWidth, H = window.innerHeight;
 				renderer = new THREE.WebGLRenderer();
 				renderer.setSize( W, H );
