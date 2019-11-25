@@ -11,27 +11,54 @@
 		</style>
 	</head>
 	<body>
-		
+<!-- ----------------------START OF JAVASCRIPT----------------------------------------  -->
+<!-- ----------- this is what is used to build the playground things ------ -->
 		<script src="../build/three.min.js"></script>
 		<script src="js/Detector.js"></script>
-		<script>
+
+		<!-- MUST INCLUDE MODULE OR ELSE VR DOESNT WORK!!!!!! -->
+		<script src="../build/three.module.js"></script>
+		<!-- must have type=module to make the module work -->
+		<script type="module">
+
+//__________________________________________________________________//			
 //__________________________________________________________________//
 			// what makes the webvr capable of working//
 			import { WEBVR } from './jsm/vr/WebVR.js';
 
 //__________________________________________________________________//
-			
+//__________________________________________________________________//
+
+//this is what used detector if there is webgl being used and where the detector.js comes in to play//
 			if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
 			
 			var camera, scene, renderer;
 			var geometry, material, mesh;
 
-			function setup() {
-//__________________________________________________________________//
+//this is where you call all the functions you wrote//
+			init();
+			setup();
+			draw();
+			animate();
+//___________________________________________________________________________________//
+
+
+//starts of the functions//
+
+			function init(){
+//____________________________________________________________________________________//
+//MUST BE IN INIT()
 	// important to place this or else no WEBVR button is made and cant be rendered//
 				renderer.vr.enabled = true;
   				document.body.appendChild(WEBVR.createButton(renderer));
-//__________________________________________________________________//
+//__________________________________________________________________________________//
+
+			}
+
+
+
+///this is copied from a three.js playground and just changed to be what I want it to look like//			
+			function setup() {
 
 
 				var W = window.innerWidth, H = window.innerHeight;
@@ -57,14 +84,17 @@
 				particles = new THREE.ParticleSystem( geometry, material );
 				particles.sortParticles = true;
 				scene.add( particles );
-				// paste your code from the geometryGUI here
 
+//---------------- START this is what was created in three.js playground and changed ----------------//
 
 				
 				geometry = new THREE.TorusKnotGeometry(115.31, 41.98, 100, 100, 15, 3, 1);
 material = new THREE.MeshPhongMaterial({shading: THREE.FlatShading, color: 0xa6b8f2, ambient: 0xf7a5a5, emissive: 0x000000, specular: 0x5db6f5, shininess: -3.23, transparent: true, opacity: 0.72});
 mesh = new THREE.Mesh(geometry, material);
 scene.add(mesh);
+//---------------- END of what was created in three.js playground and changed ----------------//
+
+
 			}
 
 			function draw() {
@@ -83,12 +113,25 @@ scene.add(mesh);
 				mesh.rotation.y = Date.now() * 0.0002;	
 				mesh.rotation.z = Date.now() * 0.001;
 				
-				renderer.render( scene, camera );
-
+				
+			}
+//_______________________________________________________________________//			
+//_______________________________________________________________________//			
+//_______________________________________________________________________//
+		 	function animate() {
+			renderer.setAnimationLoop(render);
 			}
 
-			setup();
-			draw();
+			function render(){
+			renderer.render( scene, camera );
+			}
+//_______________________________________________________________________//
+//_______________________________________________________________________//
+//_______________________________________________________________________//								
+
+
+//----------------------------------END OF JAVA SCRIPT------------------------------------- //
+
 
 		</script>
 		
