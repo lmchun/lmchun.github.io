@@ -93,7 +93,7 @@
 
 
 					object.position.x = -2;
-					object.position.y = 1;
+					object.position.y = -10;
 					object.position.z = -5.9;
 					object.rotation.y = 90;
 					object.scale.x = 0.01;
@@ -122,7 +122,7 @@
 				}
 				function onError() {}
 				var loader = new OBJLoader( manager );
-				loader.load( 'models/obj/sprout_x10.obj', function ( obj ) {
+				loader.load( 'models/obj/army-sprouts.obj', function ( obj ) {
 					object = obj;
 				}, onProgress, onError );
 			
