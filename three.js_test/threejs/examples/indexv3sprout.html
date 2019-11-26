@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Sprout VR! check</title>
+		<title>Sprout VR!</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<link type="text/css" rel="stylesheet" href="main.css">
@@ -36,15 +36,22 @@
 			
 ///////this is for the obj file///////
 			var object;
-			//var object2;
+			var object2;
 			
 //       --------  this is calling the functions to run   ----------        //
 			init();
 			animate();
 // this is where it establishes the intialization for the scene to run //
 			function init() {
+
+				//custom background like skybox in unity
+				var background = new THREE.CubeTextureLoader()
+					.setPath( 'textures/cube/nightsky/' )
+					.load( [ 'left.jpg', 'right.jpg', 'top.jpg', 'bot.jpg', 'back.jpg', 'front.jpg' ] );
+					background.format = THREE.RGBFormat;
+
 				scene = new THREE.Scene();
-				scene.background = new THREE.Color( 0x505050 );
+				scene.background = background;
 				camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.1, 10 );
 				room = new THREE.LineSegments(
 					new BoxLineGeometry( 0, 0, 0, 0, 0, 0 ),
@@ -84,30 +91,20 @@
 						if ( child.isMesh ) child.material.map = texture;
 					} );
 
-					// object2.traverse( function ( child ) {
-					// 	if ( child.isMesh ) child.material.map = texture;
-					// } );
 
-					object.position.x = -1;
+
+					object.position.x = -2;
 					object.position.y = 1;
 					object.position.z = -5.9;
-					
-					object.scale.x = 0.1;
-					object.scale.y = 0.1;
-					object.scale.z = 0.1;
+					object.rotation.y = 90;
+					object.scale.x = 0.01;
+					object.scale.y = 0.01;
+					object.scale.z = 0.01;
 				
-
-					// // object2.position.x = -1;
-					// // object2.position.y = 1;
-					// object2.position.z = -5.9;
-					// // object2.rotation.z = 0;
-					// object2.scale.x = 10;
-					// object2.scale.y = 10;
-					// object2.scale.z = 10;
+				
 				
 
 					scene.add( object );
-					// scene.add( object2 );
 				}
 				var manager = new THREE.LoadingManager( loadModel );
 				manager.onProgress = function ( item, loaded, total ) {
@@ -116,9 +113,6 @@
 				// texture///////
 				var textureLoader = new THREE.TextureLoader( manager );
 				var texture = textureLoader.load( 'textures/plant.jpg' );
-
-				// var textureLoader2 = new THREE.TextureLoader( manager );
-				// var texture2 = textureLoader2.load( 'textures/plant.jpg' );
 
 				// model/////////
 				function onProgress( xhr ) {
@@ -132,11 +126,7 @@
 				loader.load( 'models/obj/sprout_x10.obj', function ( obj ) {
 					object = obj;
 				}, onProgress, onError );
-				
-				// var loader2 = new OBJLoader( manager );
-				// loader2.load( 'models/obj/sprout_x10.obj', function ( obj ) {
-				// 	object2 = obj;
-				// }, onProgress, onError );
+			
 
 				window.addEventListener( 'resize', onWindowResize, false );
 			}

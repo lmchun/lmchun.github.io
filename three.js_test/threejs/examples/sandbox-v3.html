@@ -11,6 +11,7 @@
 	<body>
 
 		<script src="js/vr/HelioWebXRPolyfill.js"></script>
+		<script src="../build/three.min.js"></script>
 
 		<script type="module">
 			import * as THREE from '../build/three.module.js';
@@ -49,6 +50,46 @@
 				// scene.add( mesh );
 				//end of the torus code
 
+				//particles
+				// create the particle variables
+				var particleCount = 1800,
+				    particles = new THREE.Geometry(),
+				    pMaterial = new THREE.ParticleBasicMaterial({
+				      color: 0xFFFFFF,
+				      size: 20
+				    });
+
+				// now create the individual particles
+				for (var p = 0; p < particleCount; p++) {
+
+				  // create a particle with random
+				  // position values, -250 -> 250
+				  var pX = Math.random() * 500 - 250,
+				      pY = Math.random() * 500 - 250,
+				      pZ = Math.random() * 500 - 250,
+				      particle = new THREE.Vertex(
+				        new THREE.Vector3(pX, pY, pZ)
+				      );
+
+				  // add it to the geometry
+				  particles.vertices.push(particle);
+				}
+
+				// create the particle system
+				var particleSystem = new THREE.ParticleSystem(
+				    particles,
+				    pMaterial);
+
+				// add it to the scene
+				scene.add(particleSystem);
+
+				//custom geometry//
+				var geometry, material, mesh;
+				geometry = new THREE.TorusKnotGeometry(115.31, 41.98, 100, 100, 15, 3, 1);
+				material = new THREE.MeshPhongMaterial({shading: THREE.FlatShading, color: 0xa6b8f2, ambient: 0xf7a5a5, emissive: 0x000000, specular: 0x5db6f5, shininess: -3.23, transparent: true, opacity: 0.72});
+				mesh = new THREE.Mesh(geometry, material);
+				scene.add(mesh);
+
 				var light = new THREE.DirectionalLight( 0x8800ff );
 				light.position.set( - 1, 1.5, - 1.5 );
 				light.castShadow = true;
@@ -80,25 +121,7 @@
 				lensflare.addElement( new LensflareElement( texture3, 70, 1 ) );
 				scene.add( lensflare );
 
-				//
-				// var geometry = new THREE.PlaneBufferGeometry( 1.4, 1.4 );
-				// reflector = new Reflector( geometry, {
-				// 	textureWidth: window.innerWidth * window.devicePixelRatio,
-				// 	textureHeight: window.innerHeight * window.devicePixelRatio
-				// } );
-				// reflector.position.x = 1;
-				// reflector.position.y = 0.5;
-				// reflector.position.z = - 3;
-				// reflector.rotation.y = - Math.PI / 4;
-				// scene.add( reflector );
-				// var geometry = new THREE.BoxBufferGeometry( 1.5, 1.5, 0.1 );
-				// var material = new THREE.MeshPhongMaterial();
-				// var mesh = new THREE.Mesh( geometry, material );
-				// mesh.position.z = - 0.07;
-				// mesh.castShadow = true;
-				// mesh.receiveShadow = true;
-				// reflector.add( mesh );
-				//
+			
 
 				renderer = new THREE.WebGLRenderer( { antialias: true } );
 				renderer.autoClear = false;
@@ -108,6 +131,8 @@
 				renderer.vr.enabled = true;
 				document.body.appendChild( renderer.domElement );
 				document.body.appendChild( WEBVR.createButton( renderer ) );
+				
+
 				//
 				window.addEventListener( 'resize', onWindowResize, false );
 			}
