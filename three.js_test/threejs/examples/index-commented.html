@@ -17,12 +17,16 @@
 		<script type="module">
 			//MUST IMPORT THIS OR ELSE IT DOES NOT WORK!!!!!!!
 			import * as THREE from '../build/three.module.js';
+
 			//this is the import of the box geometry not necessary for what I want but okay	
 			import { BoxLineGeometry } from './jsm/geometries/BoxLineGeometry.js';
+
 		//bottom line this is necessary to do webvr IMPORTANT IMPORTANT IMPORTANT!!  //
 			import { WEBVR } from './jsm/vr/WebVR.js';
+
 		//important to use the objs//
 			import { OBJLoader } from './jsm/loaders/OBJLoader.js';
+
 	//establishes the camera the scene and the renderer to create the 3d scene 		
 			var camera, scene, renderer;
 	//controllers for the vr devices if there are controller to be used to interact//		
@@ -39,20 +43,49 @@
 //       --------  this is calling the functions to run   ----------        //
 			init();
 			animate();
+
+////////////////////////////////////////////START OF INIT!!///////////////////////////////////////////////////////
 // this is where it establishes the intialization for the scene to run //
 			function init() {
 				scene = new THREE.Scene();
 				scene.background = new THREE.Color( 0x505050 );
 				camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.1, 10 );
-				// room = new THREE.LineSegments(
-				// 	//new BoxLineGeometry( 6, 6, 6, 10, 10, 10 ),
-				// 	new THREE.LineBasicMaterial( { color: 0x808080 } )
-				// );
-				// room.geometry.translate( 0, 3, 0 );
-				// scene.add( room );
+////////////////////////////////////////to draw the room///////////////////////////////////////////
+				room = new THREE.LineSegments(
+					//this draws the lines on the background of the room
+					new BoxLineGeometry( 0, 0, 0, 0, 0, 0 ),
+					//new BoxLineGeometry( 6, 6, 6, 10, 10, 10 ),
+
+					//this is the color of the room you can change this color to an image here (like a skybox)
+					new THREE.LineBasicMaterial( { color: 0x808080 } )
+				);
+			//move the room (like the planes that you create in unity to contain the player)
+				room.geometry.translate( 0, 3, 0 );
+				scene.add( room );
+//////////////////////////////////END OF to draw the room/////////////////////////////////////				
 				var light = new THREE.HemisphereLight( 0xffffff, 0x444444 );
 				light.position.set( 1, 1, 1 );
 				scene.add( light );
+
+//no more BALLSSSS!!!
+		//this is to make the geometry to be able to interact with the balls //
+				// var geometry = new THREE.IcosahedronBufferGeometry( radius, 2 );
+
+				// //creating the for loop to make a bunch of balls
+				// for ( var i = 0; i < 200; i ++ ) {
+				// 	var object = new THREE.Mesh( geometry, new THREE.MeshLambertMaterial( { color: Math.random() * 0xffffff } ) );
+				// 	//adding the random position of the balls///
+				// 	object.position.x = Math.random() * 4 - 2;
+				// 	object.position.y = Math.random() * 4;
+				// 	object.position.z = Math.random() * 4 - 2;
+				// 	// adding the velocity of the balls to fall at those positions//
+				// 	object.userData.velocity = new THREE.Vector3();
+				// 	object.userData.velocity.x = Math.random() * 0.01 - 0.005;
+				// 	object.userData.velocity.y = Math.random() * 0.01 - 0.005;
+				// 	object.userData.velocity.z = Math.random() * 0.01 - 0.005;
+				// 	room.add( object );
+				// }
+				// //
 
 				renderer = new THREE.WebGLRenderer( { antialias: true } );
 				renderer.setPixelRatio( window.devicePixelRatio );
@@ -60,8 +93,12 @@
 				renderer.vr.enabled = true;
 				document.body.appendChild( renderer.domElement );
 
+ //----------	THIS IS NECESSARY TO MAKE THE WEBVR BUTTON OR ELSE YOURE STUCK IN REGULAR WEBVR----------//
 				document.body.appendChild( WEBVR.createButton( renderer ) );
+//________________________ MUST INCLUDE ______________________________________________________________//
 
+
+				// controllers
 				function onSelectStart() {
 					this.userData.isSelecting = true;
 				}
@@ -76,15 +113,13 @@
 				controller2.addEventListener( 'selectstart', onSelectStart );
 				controller2.addEventListener( 'selectend', onSelectEnd );
 				scene.add( controller2 );
+//////////////////////////////////////loading obj/////////////////////////////////////////////////////////////
 
-				function loadModel() {
+function loadModel() {
 					object.traverse( function ( child ) {
 						if ( child.isMesh ) child.material.map = texture;
 					} );
 					object.position.y = - 5;
-					object.scale.y = 0.1;
-					object.scale.x = 0.1;
-					object.scale.z = 0.1;
 					scene.add( object );
 				}
 				var manager = new THREE.LoadingManager( loadModel );
@@ -101,19 +136,36 @@
 						console.log( 'model ' + Math.round( percentComplete, 2 ) + '% downloaded' );
 					}
 				}
+				//actually putting the obj in here
 				function onError() {}
 				var loader = new OBJLoader( manager );
 				loader.load( 'models/obj/hibiscus-v1_x10.obj', function ( obj ) {
 					object = obj;
 				}, onProgress, onError );
-				var loader2 = new OBJLoader( manager );
-				loader2.load( 'models/obj/hibiscus-v1.obj', function ( obj ) {
-					object = obj;
-				}, onProgress, onError );
+
+				// var loader2 = new OBJLoader( manager );
+				// loader2.load( 'models/obj/hibiscus-v1.obj', function ( obj ) {
+				// 	object = obj;
+				// }, onProgress, onError );
+
+// ////////////////////////////////////////end of loading obj/////////////////////////////////////////////////
+//no controllers (:
+				// // helpers
+				// var geometry = new THREE.BufferGeometry();
+				// geometry.setAttribute( 'position', new THREE.Float32BufferAttribute( [ 0, 0, 0, 0, 0, - 1 ], 3 ) );
+				// geometry.setAttribute( 'color', new THREE.Float32BufferAttribute( [ 0.5, 0.5, 0.5, 0, 0, 0 ], 3 ) );
+				// var material = new THREE.LineBasicMaterial( { vertexColors: true, blending: THREE.AdditiveBlending } );
+				// controller1.add( new THREE.Line( geometry, material ) );
+				// controller2.add( new THREE.Line( geometry, material ) );
+				// //
+				
 
 				window.addEventListener( 'resize', onWindowResize, false );
 			}
-//---------------------------------END OF INT FUNCTION---------------------------------------------///
+//------------------------------------END OF INT FUNCTION---------------------------------------------///
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 // basically this resizes the window for WEBVR//
 			function onWindowResize() {
 				camera.aspect = window.innerWidth / window.innerHeight;
@@ -133,11 +185,56 @@
 			}
 	//_______________basically the draw function of this thing________________//
 			function animate() {
+
+				
+
 				renderer.setAnimationLoop( render );
 			}
+
 //do not touch this is all rendering that I do not need to edit this is part of the base line of code//	
 			function render() {
-				
+				// handleController( controller1 );
+				// handleController( controller2 );
+				// //
+				// var delta = clock.getDelta() * 0.8; // slow down simulation
+				// var range = 3 - radius;
+				// for ( var i = 0; i < room.children.length; i ++ ) {
+				// 	var object = room.children[ i ];
+				// 	object.position.x += object.userData.velocity.x * delta;
+				// 	object.position.y += object.userData.velocity.y * delta;
+				// 	object.position.z += object.userData.velocity.z * delta;
+				// 	// keep objects inside room
+				// 	if ( object.position.x < - range || object.position.x > range ) {
+				// 		object.position.x = THREE.Math.clamp( object.position.x, - range, range );
+				// 		object.userData.velocity.x = - object.userData.velocity.x;
+				// 	}
+				// 	if ( object.position.y < radius || object.position.y > 6 ) {
+				// 		object.position.y = Math.max( object.position.y, radius );
+				// 		object.userData.velocity.x *= 0.98;
+				// 		object.userData.velocity.y = - object.userData.velocity.y * 0.8;
+				// 		object.userData.velocity.z *= 0.98;
+				// 	}
+				// 	if ( object.position.z < - range || object.position.z > range ) {
+				// 		object.position.z = THREE.Math.clamp( object.position.z, - range, range );
+				// 		object.userData.velocity.z = - object.userData.velocity.z;
+				// 	}
+				// 	for ( var j = i + 1; j < room.children.length; j ++ ) {
+				// 		var object2 = room.children[ j ];
+				// 		normal.copy( object.position ).sub( object2.position );
+				// 		var distance = normal.length();
+				// 		if ( distance < 2 * radius ) {
+				// 			normal.multiplyScalar( 0.5 * distance - radius );
+				// 			object.position.sub( normal );
+				// 			object2.position.add( normal );
+				// 			normal.normalize();
+				// 			relativeVelocity.copy( object.userData.velocity ).sub( object2.userData.velocity );
+				// 			normal = normal.multiplyScalar( relativeVelocity.dot( normal ) );
+				// 			object.userData.velocity.sub( normal );
+				// 			object2.userData.velocity.add( normal );
+				// 		}
+				// 	}
+				// 	object.userData.velocity.y -= 9.8 * delta;
+				// }
 				renderer.render( scene, camera );
 			}
 		</script>
