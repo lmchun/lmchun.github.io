@@ -53,7 +53,9 @@
 				grid.material.opacity = 0.2;
 				grid.material.transparent = true;
 				scene.add( grid );
-				// model
+
+
+				// fbx
 				var loader = new FBXLoader();
 				loader.load( 'models/fbx/wiggle_sprout.fbx', function ( object ) {
 					mixer = new THREE.AnimationMixer( object );
