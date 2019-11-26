@@ -17,7 +17,7 @@
 		<script type="module">
 			//MUST IMPORT THIS OR ELSE IT DOES NOT WORK!!!!!!!
 			import * as THREE from '../build/three.module.js';
-			//this is the import of the box geometry not necessary for what I want but okay	
+			//this is the import of the box geometry to create the original room
 			import { BoxLineGeometry } from './jsm/geometries/BoxLineGeometry.js';
 		//bottom line this is necessary to do webvr IMPORTANT IMPORTANT IMPORTANT!!  //
 			import { WEBVR } from './jsm/vr/WebVR.js';
@@ -27,6 +27,7 @@
 			var camera, scene, renderer;
 	//controllers for the vr devices if there are controller to be used to interact//		
 			var controller1, controller2;
+			//this creates the room for the environment
 			var room;
 			var count = 0;
 			var radius = 0.08;
@@ -48,16 +49,20 @@
 					.setPath( 'textures/cube/nightsky/' )
 					.load( [ 'left.jpg', 'right.jpg', 'top.jpg', 'bot.jpg', 'back.jpg', 'front.jpg' ] );
 					background.format = THREE.RGBFormat;
-
+				//this is the standard to create a scene in three.js
 				scene = new THREE.Scene();
+				//creates the background defined by the skybox in line 48
 				scene.background = background;
 				camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.1, 10 );
+				//creates the room and there can be lines but I removed them
 				room = new THREE.LineSegments(
 					new BoxLineGeometry( 0, 0, 0, 0, 0, 0 ),
 					new THREE.LineBasicMaterial( { color: 0x808080 } )
 				);
-				room.geometry.translate( 0, 3, 0 );
+				room.geometry.translate( 0, 0, 0 );
+				//this scene.add basically pushes anything written in the code to create it in the scene 
 				scene.add( room );
+				//the type of light I am using
 				var light = new THREE.HemisphereLight( 0xffffff, 0x444444 );
 				light.position.set( 1, 1, 1 );
 				scene.add( light );
@@ -65,9 +70,10 @@
 				renderer = new THREE.WebGLRenderer( { antialias: true } );
 				renderer.setPixelRatio( window.devicePixelRatio );
 				renderer.setSize( window.innerWidth, window.innerHeight );
+				//enables vr
 				renderer.vr.enabled = true;
 				document.body.appendChild( renderer.domElement );
-
+				//to create the webvr button or else you cannot have the option to go into webvr and get stuck
 				document.body.appendChild( WEBVR.createButton( renderer ) );
 
 				function onSelectStart() {
@@ -76,6 +82,7 @@
 				function onSelectEnd() {
 					this.userData.isSelecting = false;
 				}
+				//for controllers 
 				controller1 = renderer.vr.getController( 0 );
 				controller1.addEventListener( 'selectstart', onSelectStart );
 				controller1.addEventListener( 'selectend', onSelectEnd );
@@ -85,13 +92,15 @@
 				controller2.addEventListener( 'selectend', onSelectEnd );
 				scene.add( controller2 );
 
+
+				//this is where you add the objs models
 				function loadModel() {
 					object.traverse( function ( child ) {
 						if ( child.isMesh ) child.material.map = texture;
 					} );
+					//this point makes the objects children to be applying the textures on them
 
-
-
+					//these transform the object to be manipulated the way I need
 					object.position.x = 1;
 					object.position.y = -5;
 					object.position.z = -4;
@@ -102,18 +111,19 @@
 				
 				
 				
-
+					//adds the object to the scene
 					scene.add( object );
 				}
 				var manager = new THREE.LoadingManager( loadModel );
 				manager.onProgress = function ( item, loaded, total ) {
 					console.log( item, loaded, total );
 				};
-				// texture///////
+
+				// adds the texture///////
 				var textureLoader = new THREE.TextureLoader( manager );
 				var texture = textureLoader.load( 'textures/plant.jpg' );
 
-				// model/////////
+				// adds the obj model/////////
 				function onProgress( xhr ) {
 					if ( xhr.lengthComputable ) {
 						var percentComplete = xhr.loaded / xhr.total * 100;
