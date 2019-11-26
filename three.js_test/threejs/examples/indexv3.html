@@ -44,12 +44,12 @@
 				scene = new THREE.Scene();
 				scene.background = new THREE.Color( 0x505050 );
 				camera = new THREE.PerspectiveCamera( 70, window.innerWidth / window.innerHeight, 0.1, 10 );
-				// room = new THREE.LineSegments(
-				// 	//new BoxLineGeometry( 6, 6, 6, 10, 10, 10 ),
-				// 	new THREE.LineBasicMaterial( { color: 0x808080 } )
-				// );
-				// room.geometry.translate( 0, 3, 0 );
-				// scene.add( room );
+				room = new THREE.LineSegments(
+					new BoxLineGeometry( 0, 0, 0, 0, 0, 0 ),
+					new THREE.LineBasicMaterial( { color: 0x808080 } )
+				);
+				room.geometry.translate( 0, 3, 0 );
+				scene.add( room );
 				var light = new THREE.HemisphereLight( 0xffffff, 0x444444 );
 				light.position.set( 1, 1, 1 );
 				scene.add( light );
