@@ -113,10 +113,12 @@
 				manager.onProgress = function ( item, loaded, total ) {
 					console.log( item, loaded, total );
 				};
-				// texture
+				// texture///////
 				var textureLoader = new THREE.TextureLoader( manager );
 				var texture = textureLoader.load( 'textures/uv_grid_opengl.jpg' );
-				// model
+
+
+				// model/////////
 				function onProgress( xhr ) {
 					if ( xhr.lengthComputable ) {
 						var percentComplete = xhr.loaded / xhr.total * 100;
