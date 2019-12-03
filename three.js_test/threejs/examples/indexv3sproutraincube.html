@@ -97,17 +97,20 @@
 				scene.add( controller2 );
 
 				//particle of rain
-				var geometry = new THREE.IcosahedronBufferGeometry( radius, 2  );
+				var geometry = new THREE.TorusKnotGeometry(132.57, 46.29, 64, 2, 4.03, 2.37, 5.1  );
+				//for spheres
+				// var geometry = new THREE.IcosahedronBufferGeometry( radius, 2  );
+
 				for ( var i = 0; i < 200; i ++ ) {
 					var object = new THREE.Mesh( geometry, new THREE.MeshLambertMaterial( { color: 0x0000FF} ) );
 					object.position.x = Math.random() * 4 - 2;
 					object.position.y = Math.random() * 4 - 2;
 					object.position.z = Math.random() * 4 - 2;
-					object.scale.x = 0.2;
-					object.scale.y = 0.2;
-					object.scale.z = 0.2;
+					object.scale.x = 0.0001;
+					object.scale.y = 0.0001;
+					object.scale.z = 0.0001;
 					object.userData.velocity = new THREE.Vector3();
-					//object.userData.velocity.x = Math.random() * 0.01 - 0.005;
+					//object.userData.velocity.y = Math.random() * 0.01 - 0.005;
 					object.userData.velocity.y = Math.random() * 2;
 					room.add( object );
 				}
@@ -186,7 +189,7 @@
 				
 			/////////////////////////////
 
-			
+
 				var delta = clock.getDelta() * 0.8; // slow down simulation
 				var range = 3 - radius;
 				for ( var i = 0; i < room.children.length; i ++ ) {
@@ -200,10 +203,15 @@
 						object.userData.velocity.x = - object.userData.velocity.x;
 					}
 					if ( object.position.y < radius || object.position.y > 6 ) {
-						object.position.y = Math.max( object.position.y, radius );
-						object.userData.velocity.x *= 0.98;
-						object.userData.velocity.y = - object.userData.velocity.y * 0.8;
-						object.userData.velocity.z *= 0.98;
+						object.position.y = Math.random()*4;
+						object.userData.velocity.y=Math.random()*0.01;
+						//object.userData.velocity.y=Math.random()*0.01-0.005;
+						// object.position.y = Math.random()*4;
+						// object.position.y = Math.max( object.position.y, radius );
+						
+						//object.userData.velocity.x *= 0.98;
+						// object.userData.velocity.y = - object.userData.velocity.y * 0.8;
+						//object.userData.velocity.z *= 0.98;
 					}
 					if ( object.position.z < - range || object.position.z > range ) {
 						object.position.z = THREE.Math.clamp( object.position.z, - range, range );
@@ -226,7 +234,7 @@
 					}
 					object.userData.velocity.y -= 9.8 * delta;
 				}
-			
+
 			/////////////////////////////	
 
 				renderer.render( scene, camera );
