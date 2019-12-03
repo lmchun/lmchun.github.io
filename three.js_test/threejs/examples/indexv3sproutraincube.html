@@ -184,6 +184,51 @@
 //do not touch this is all rendering that I do not need to edit this is part of the base line of code//	
 			function render() {
 				
+			/////////////////////////////
+
+			
+				var delta = clock.getDelta() * 0.8; // slow down simulation
+				var range = 3 - radius;
+				for ( var i = 0; i < room.children.length; i ++ ) {
+					var object = room.children[ i ];
+					object.position.x += object.userData.velocity.x * delta;
+					object.position.y += object.userData.velocity.y * delta;
+					object.position.z += object.userData.velocity.z * delta;
+					// keep objects inside room
+					if ( object.position.x < - range || object.position.x > range ) {
+						object.position.x = THREE.Math.clamp( object.position.x, - range, range );
+						object.userData.velocity.x = - object.userData.velocity.x;
+					}
+					if ( object.position.y < radius || object.position.y > 6 ) {
+						object.position.y = Math.max( object.position.y, radius );
+						object.userData.velocity.x *= 0.98;
+						object.userData.velocity.y = - object.userData.velocity.y * 0.8;
+						object.userData.velocity.z *= 0.98;
+					}
+					if ( object.position.z < - range || object.position.z > range ) {
+						object.position.z = THREE.Math.clamp( object.position.z, - range, range );
+						object.userData.velocity.z = - object.userData.velocity.z;
+					}
+					for ( var j = i + 1; j < room.children.length; j ++ ) {
+						var object2 = room.children[ j ];
+						normal.copy( object.position ).sub( object2.position );
+						var distance = normal.length();
+						if ( distance < 2 * radius ) {
+							normal.multiplyScalar( 0.5 * distance - radius );
+							object.position.sub( normal );
+							object2.position.add( normal );
+							normal.normalize();
+							relativeVelocity.copy( object.userData.velocity ).sub( object2.userData.velocity );
+							normal = normal.multiplyScalar( relativeVelocity.dot( normal ) );
+							object.userData.velocity.sub( normal );
+							object2.userData.velocity.add( normal );
+						}
+					}
+					object.userData.velocity.y -= 9.8 * delta;
+				}
+			
+			/////////////////////////////	
+
 				renderer.render( scene, camera );
 			}
 		</script>
