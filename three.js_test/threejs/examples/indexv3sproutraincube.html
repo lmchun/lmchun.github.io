@@ -97,6 +97,17 @@
 				controller2.addEventListener( 'selectend', onSelectEnd );
 				scene.add( controller2 );
 
+
+				//audio code
+				// var listener = new THREE.AudioListener();
+				// camera.add( listener );
+
+				// var sound1 = new THREE.Audio( listener );
+				// sound1.load( 'sounds/farm.wav' );
+				// sound1.setRefDistance( 20 );
+				// mesh1.add( sound1 );
+
+
 				//particle of rain
 				var geometry = new THREE.TorusKnotGeometry(132.57, 46.29, 64, 2, 4.03, 2.37, 5.1  );
 				//for spheres
@@ -190,7 +201,7 @@
 				
 			/////////////////////////////
 
-
+			//this is the particles system for the rain to fall
 				var delta = clock.getDelta() * 0.8; // slow down simulation
 				var range = 3 - radius;
 				for ( var i = 0; i < room.children.length; i ++ ) {
@@ -205,14 +216,11 @@
 					}
 					if ( object.position.y < radius || object.position.y > 6 ) {
 						object.position.y = Math.random()*4;
+						//this is so that it falls at a different rate than used previously
 						object.userData.velocity.y=Math.random()*0.01;
 						//object.userData.velocity.y=Math.random()*0.01-0.005;
 						// object.position.y = Math.random()*4;
 						// object.position.y = Math.max( object.position.y, radius );
-						
-						//object.userData.velocity.x *= 0.98;
-						// object.userData.velocity.y = - object.userData.velocity.y * 0.8;
-						//object.userData.velocity.z *= 0.98;
 					}
 					if ( object.position.z < - range || object.position.z > range ) {
 						object.position.z = THREE.Math.clamp( object.position.z, - range, range );
