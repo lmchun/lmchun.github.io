@@ -96,40 +96,21 @@
 				controller2.addEventListener( 'selectend', onSelectEnd );
 				scene.add( controller2 );
 
-				//adding particles!
-
-				// create the particle variables
-				var particleCount = 1800,
-				    particles = new THREE.Geometry(),
-				    pMaterial = new THREE.ParticleBasicMaterial({
-				      color: 0xFFFFFF,
-				      size: 20
-				    });
-
-				// now create the individual particles
-				for (var p = 0; p < particleCount; p++) {
-
-				  // create a particle with random
-				  // position values, -250 -> 250
-				  var pX = Math.random() * 500 - 250,
-				      pY = Math.random() * 500 - 250,
-				      pZ = Math.random() * 500 - 250,
-				      particle = new THREE.Vertex(
-				        new THREE.Vector3(pX, pY, pZ)
-				      );
-
-				  // add it to the geometry
-				  particles.vertices.push(particle);
+				//particle of rain
+				var geometry = new THREE.IcosahedronBufferGeometry( radius, 2  );
+				for ( var i = 0; i < 200; i ++ ) {
+					var object = new THREE.Mesh( geometry, new THREE.MeshLambertMaterial( { color: 0x0000FF} ) );
+					object.position.x = Math.random() * 4 - 2;
+					object.position.y = Math.random() * 4 - 2;
+					object.position.z = Math.random() * 4 - 2;
+					object.scale.x = 0.2;
+					object.scale.y = 0.2;
+					object.scale.z = 0.2;
+					object.userData.velocity = new THREE.Vector3();
+					//object.userData.velocity.x = Math.random() * 0.01 - 0.005;
+					object.userData.velocity.y = Math.random() * 2;
+					room.add( object );
 				}
-
-				// create the particle system
-				var particleSystem = new THREE.ParticleSystem(
-				    particles,
-				    pMaterial);
-
-				// add it to the scene
-				scene.addChild(particleSystem);
-
 
 
 				//this is where you add the objs models
