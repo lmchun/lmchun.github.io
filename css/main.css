@@ -1,4 +1,4 @@
-/*TABLE OF CONTENT 
+/*TABLE OF CONTENT
 
 
 
@@ -65,13 +65,9 @@ img{
   transition: all 0.3s;
 }
 
-.imgmain:hover{
-   transform:scale(1.1);
-}
-
 .logo{
-  font-size:22px; 
-  text-align:left; 
+  font-size:22px;
+  text-align:left;
   font-family: 'Montserrat', sans-serif;
   padding-top: 10px;
 
@@ -91,14 +87,58 @@ a{
 -bluely gray color: #617378; this is currently the navigatation background color
 */
 
+
+/*- _____________image gallery hover and slight curve_________________- */
+
 .imgmain{
   border-radius: 5px;
 }
 
+.imgmain:hover{
+   transform:scale(1.1);
+}
+/* .text_container{
+	position:relative;
+	width:50%;
+}
+
+.text_container:hover .overlay_title {
+  opacity: 0.5;
+}
+
+.overlay_title {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+
+
+
+.title_text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+} */
+
+/* ______ */
+
 .imgselect{
     width:80%;
     border:solid 50px #272b2b;
-    
+
 }
 
 .big{
@@ -142,7 +182,7 @@ video hover with js*/
     .viewport:hover video {
       opacity: 1;
     }
-   
+
     .fade {
       transition: opacity .5s ease-in-out;
     }
@@ -197,7 +237,7 @@ video hover with js*/
 
 .navigation {
   list-style: none;
-  margin: 0; 
+  margin: 0;
   font-family: 'Montserrat', sans-serif;
   display: flex;
   justify-content:flex-end;
@@ -214,7 +254,7 @@ video hover with js*/
 
 .subnavigation {
   list-style: none;
-  margin: 0; 
+  margin: 0;
   border-radius:10px;
   background: white;
   font-family: 'Montserrat', sans-serif;
@@ -250,3 +290,4 @@ display:grid;
 
 }
 
+/* ________________________________________ */
