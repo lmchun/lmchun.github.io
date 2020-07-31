@@ -8,7 +8,7 @@ let overdirt1 = false;
 //not sure if this applies still
 let a =0;
 //alphas
-let alpha1  =0;
+let alpha1 =0;
 let alpha2 =0;
 let alpha3 =0;
 let alpha4 =0;
@@ -88,7 +88,7 @@ function draw() {
 
   cursorIcon();
   toolbar();
-  //checkxy();
+
   dirt();
 
   if (waterselect == true) {
@@ -101,9 +101,14 @@ function draw() {
       system.run();
       //print('watering from the wateringcan');
       //this shows that the plants have been watered checking it off as a requirement to grow
-      watered1 = true;
-      watered2 = true;
-      print(watered1, watered2);
+      if (mouseX > 477 - 100 &&
+      mouseX < 477 + 100 &&
+      mouseY > 154 - 125 &&
+      mouseY < 154 + 125){
+        watered1 = true;
+        watered2 = true;
+          }
+      //print(watered1, watered2);
     }
   }
   if (shovelselect == true) {
@@ -116,14 +121,14 @@ function draw() {
       mouseY > dirty1  &&
       mouseY < dirty1 + 110){
       shoveled1 = true;
-      print('shoveled checked1');
+  //    print('shoveled checked1');
       }
       if(mouseX > dirtx2  &&
       mouseX < dirtx2 + 211 &&
       mouseY > dirty2  &&
       mouseY < dirty2 + 110){
       shoveled2 = true;
-      print('shoveled checked2');
+  //    print('shoveled checked2');
       }
     }
   }
@@ -137,21 +142,20 @@ function draw() {
       mouseY > dirty1 - 70 &&
       mouseY < dirty1 + 110){
       seeded1 = true;
-      print('seed checked1');
+    //  print('seed checked1');
       }
       if(mouseX > dirtx2  &&
       mouseX < dirtx2 + 211 &&
       mouseY > dirty2 - 70  &&
       mouseY < dirty2 + 110){
       seeded2 = true;
-      print('seed checked2');
+    //  print('seed checked2');
       }
     }
   }
-  //sprouting();
-  //planted();
+  //growth();
 
-
+//for check marks
   if(seeded1 && seeded2){
     image(img12,sedx,sedy);
   }
@@ -160,6 +164,18 @@ function draw() {
   }
   if(shoveled1 && shoveled2){
     image(img12,watx-10,waty);
+  }
+  //checkxy();
+
+// rect(477,154,200,250);
+
+  if(shoveled1 && seeded1 && watered1){
+
+    image(img10,dirtx1 -30, 0);
+    }
+
+  if(shoveled2 && seeded2 && watered2){
+    image(img10,dirtx2 -30, 0);
   }
 }
 
@@ -241,61 +257,6 @@ function toolbar() {
   }
 }
 
-// function sprouting(){
-//
-//   //seed stage 1
-//   tint(255, a);
-//   image(img8, 100,20);
-//   //seed stage 2
-//   tint(255, a2);
-//   image(img9, 100,20);
-//   //seed stage 3
-//   tint(255, a3);
-//   image(img10, 100,20);
-//   //seed stage 4
-//   tint(255, a4);
-//   image(img11, 100,20);
-//
-// //alpha 1
-//   //fade in
-//   if(frameCount < 299){
-//     if(frameCount < 255){
-//       if(a<255){
-//       a++;
-//       }
-//     }
-//   }else {
-//     //fade out
-//     if(frameCount > 300){
-//       if(a>0){
-//       a-=2;
-//       }
-//     }
-//   }
-// ////for alpha 2
-//   //refering to switching to after alpha 1
-//     //happens after 300 since that is parameters for alpha 1
-//   // if(frameCount > 301){
-//
-//   //   if(frameCount < 345){
-//   //     if(frameCount > 301{
-//   //       if(a2<300){
-//   //         a2++;
-//   //       }
-//   //     }
-//   //   }else {
-//   //     if(frameCount < 345){
-//   //       if(a2>0){
-//   //         a2-=2;
-//   //       }
-//   //     }
-//   //   }
-//   // }
-//   //image();
-//
-//
-//   tint(255,255);
-// }
 
 
 
@@ -322,59 +283,66 @@ function dirt() {
   image(img4, width / 3 + width / 6, 360);
 }
 
-// function growth (){
-//   // Constrain the alphas
-//   	alpha1 = constrain(a,0,255);
-//   	alpha2 = constrain(a,0,255);
-//   	alpha3 = constrain(a,0,255);
-//   	alpha4 = constrain(a,0,255);
-// //this is to check if it has been watered and seeded and shoveled
-//   if(shoveled1 && seeded1 && watered1){
-//     if(waterTimes < 0){
-//     			alpha1++;
-//     		}else if(0<waterTimes<2){ //If we're at stage0 and we watered again....
-//     			alpha1--; // Fade out stage0;
-//     			alpha2++; // Fade in Stage1
-//     		}else if(1<waterTimes<3){ //Repeat
-//     			alpha2--; //Fade out
-//     			alpha3++; //Fade in
-//     		}else if(2<waterTimes<4){
-//     			alpha3--;
-//     			alpha4++;
-//     		}
-//         push();
-// 		      tint(255,alpha1);
-// 		      image(sprout_stage1);
-// 		      tint(255,alpha2);
-// 		      image(sprout_stage2);
-// 		      tint(255,alpha3);
-// 		      image(sprout_stage3);
-// 		      tint(255,alpha4);
-// 		      image(sprout_stage4);
-// 		    pop();
-// 	 }
-//   if(mouseIsPressed == true){
-// 		// If the alpha0 is at max and we watered again (Note you decide when to make water again true)
-// 		if(alpha1 >= 255 && waterAgain = true){
-// 			waterTimes = 1; //go to one
-// 			waterAgain = false; //Make water Again false
-// 		}else if(alpha2 >= 255 && waterAgain = true){
-//        // If alpha1 is at max
-// 			waterTimes = 2; // go to two
-// 			waterAgain = false; // Reset
-// 		}else if(alpha3 >= 255 && waterAgain = true){ //Repeat
-// 			waterTimes = 3;
-// 			waterAgain = false;
-// 		}
-// 	}
-// }
+function growth (){
+  // Constrain the alphas
+  	alpha1 = constrain(a,0,255);
+  	alpha2 = constrain(a,0,255);
+  	alpha3 = constrain(a,0,255);
+  	alpha4 = constrain(a,0,255);
+//this is to check if it has been watered and seeded and shoveled
+  if(shoveled1 && seeded1 && watered1){
+    if(waterTimes < 1){
+    			alpha1++;
+    		}else if(0<waterTimes<2){ //If we're at stage0 and we watered again....
+    			alpha1--; // Fade out stage0;
+    			alpha2++; // Fade in Stage1
+    		}else if(1<waterTimes<3){ //Repeat
+    			alpha2--; //Fade out
+    			alpha3++; //Fade in
+    		}else if(2<waterTimes<4){
+    			alpha3--;
+    			alpha4++;
+    		}
+        push();
+		      //tint(255,alpha1);
+		      image(img8, dirtx1-30, 0);
+        pop();
+        push();
+		      //tint(255,alpha2);
+		      image(img9, dirtx1-30, 0);
+        pop();
+        push();
+		      //tint(255,alpha3);
+		      image(img10, dirtx1-30, 0);
+        pop();
+        push();
+		      //tint(255,alpha4);
+		      image(img11, dirtx1-30, 0);
+		    pop();
+	 }
+  if(mouseIsPressed == true){
+		// If the alpha0 is at max and we watered again (Note you decide when to make water again true)
+		if(alpha1 >= 255 && waterAgain == true){
+			waterTimes = 1; //go to one
+			waterAgain = false; //Make water Again false
+		}else if(alpha2 >= 255 && waterAgain == true){
+       // If alpha1 is at max
+			waterTimes = 2; // go to two
+			waterAgain = false; // Reset
+		}else if(alpha3 >= 255 && waterAgain == true){ //Repeat
+			waterTimes = 3;
+			waterAgain = false;
+		}
+	}
+}
+
 
 
 ///////////////////CHECK //////////////////////////////
 function checkxy() {
    //fill(255,0,0);
   // ellipse(mouseX,mouseY, 10,10);
-//  print(mouseX, mouseY);
+ print(mouseX, mouseY);
 
   //watering can
   //green
@@ -399,7 +367,10 @@ function checkxy() {
   rect(dirtx1, dirty1, 211,110);
   rect(dirtx2, dirty2, 211,110);
 
-
+  // image(img8, dirtx1 -30, 0);
+  // image(img9, dirtx1 -30, 0);
+  // image(img9, dirtx1 -30, 0);
+  // image(img10,dirtx1 -30, 0);
 }
 
 ////////////////PARTICLE WATER EFFECT///////////////////////////
@@ -571,3 +542,60 @@ ParticleSystem3.prototype.run = function() {
     }
   }
 }
+
+/////////////////////NOT USING///////////
+// function sprouting(){
+//
+//   //seed stage 1
+//   tint(255, a);
+//   image(img8, 100,20);
+//   //seed stage 2
+//   tint(255, a2);
+//   image(img9, 100,20);
+//   //seed stage 3
+//   tint(255, a3);
+//   image(img10, 100,20);
+//   //seed stage 4
+//   tint(255, a4);
+//   image(img11, 100,20);
+//
+// //alpha 1
+//   //fade in
+//   if(frameCount < 299){
+//     if(frameCount < 255){
+//       if(a<255){
+//       a++;
+//       }
+//     }
+//   }else {
+//     //fade out
+//     if(frameCount > 300){
+//       if(a>0){
+//       a-=2;
+//       }
+//     }
+//   }
+// ////for alpha 2
+//   //refering to switching to after alpha 1
+//     //happens after 300 since that is parameters for alpha 1
+//   // if(frameCount > 301){
+//
+//   //   if(frameCount < 345){
+//   //     if(frameCount > 301{
+//   //       if(a2<300){
+//   //         a2++;
+//   //       }
+//   //     }
+//   //   }else {
+//   //     if(frameCount < 345){
+//   //       if(a2>0){
+//   //         a2-=2;
+//   //       }
+//   //     }
+//   //   }
+//   // }
+//   //image();
+//
+//
+//   tint(255,255);
+// }
