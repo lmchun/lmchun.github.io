@@ -51,6 +51,8 @@ let shoy = 0;
 let sedx = 350;
 let sedy = 0;
 
+let widthC = 700;
+
 let dirtx1 = 125;
 let dirty1 = 374;
 let dirtx2 = 363;
@@ -63,17 +65,17 @@ let system3;
 let option;
 let fontInstruct;
 
+
+
 function preload() {
   // img1 = loadImage('img/poppy.png');
-  img2 = loadImage('img/watering_can_temp.png');
+  img2 = loadImage('img/water.png');
   img3 = loadImage('img/shovel.png');
   img4 = loadImage('img/dirt_pile.png');
   img5 = loadImage('img/bag_seeds.png');
   img6 = loadImage('img/dirt_pile_smol.png');
   img7 = loadImage('img/bag_seeds_smol.png');
-  img8 = loadImage('img/sprout_stage1.png');
-  img9 = loadImage('img/sprout_stage2.png');
-  img10 = loadImage('img/sprout_stage3.png');
+img10 = loadImage('img/sprout_stage3.png');
   img11 = loadImage('img/sprout_stage4.png');
   img12 = loadImage('img/check_mark.png');
   fontInstruct = loadFont("font/Mulish-Regular.ttf");
@@ -84,9 +86,9 @@ function setup() {
   cnv.position(100, 100);
   textFont(fontInstruct);
   textSize(22);
-  system = new ParticleSystem(createVector(width / 2, 50));
-  system2 = new ParticleSystem2(createVector(width / 2, 50));
-  system3 = new ParticleSystem3(createVector(width / 2, 50));
+  system = new ParticleSystem(createVector(widthC / 2, 50));
+  system2 = new ParticleSystem2(createVector(widthC / 2, 50));
+  system3 = new ParticleSystem3(createVector(widthC / 2, 50));
   //frameRate(100);
 }
 
@@ -167,10 +169,10 @@ function draw() {
   }
 
   if (shoveled1 && seeded1 && watered1) {
-    image(img10, dirtx1 - 30, 0);
+    image(img10, dirtx1 + 35, 200);
   }
   if (shoveled2 && seeded2 && watered2) {
-    image(img10, dirtx2 - 30, 0);
+    image(img10, dirtx2 + 35, 200);
   }
 }
 
@@ -202,7 +204,7 @@ function mousePressed() {
 
 function toolbar() {
   fill(220, 100);
-  rect(0, 0, width, 100);
+  rect(0, 0, widthC, 100);
   image(img2, shox, shoy);
   image(img3, watx, waty);
   image(img5, sedx, sedy);
@@ -270,9 +272,9 @@ function cursorIcon() {
 
 function dirt() {
   //dirt_pile1
-  image(img4, width / 6, 360);
+  image(img4, widthC / 6, 360);
   //dirt_pile2
-  image(img4, width / 3 + width / 6, 360);
+  image(img4, widthC / 3 + widthC / 6, 360);
 }
 
 ////////////////PARTICLE WATER EFFECT///////////////////////////
