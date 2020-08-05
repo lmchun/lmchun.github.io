@@ -18,12 +18,12 @@ let overseeds = false;
 let overdirt1 = false;
 
 //not sure if this applies still
-// let a = 0;
+let a = 0;
 //alphas
-// let alpha1 = 0;
-// let alpha2 = 0;
-// let alpha3 = 0;
-// let alpha4 = 0;
+let alpha1 = 0;
+let alpha2 = 0;
+let alpha3 = 0;
+let alpha4 = 0;
 
 //inital checks if the dirt has been.....
 //dirt pile 1
@@ -65,36 +65,19 @@ let system3;
 let option;
 let fontInstruct;
 
-let seedsoundconfirm;
-let watersoundconfirm;
-let shovelsoundconfirm;
 
-let sound1;
-let sound2;
-let sound3;
-let sound4;
-let sound5;
-let sound6;
 
 function preload() {
   // img1 = loadImage('img/poppy.png');
-  sound1 = loadSound("audio/grabbing_watering_can.mp3");
-  sound2 = loadSound("audio/watering.mp3");
-  sound3 = loadSound("audio/shovel_pickup.mp3");
-  sound4 = loadSound("audio/shoveling.mp3");
-  sound5 = loadSound("audio/planting.mp3");
-  sound6 = loadSound("audio/seeding.mp3");
-
   img2 = loadImage('img/water.png');
   img3 = loadImage('img/shovel.png');
   img4 = loadImage('img/dirt_pile.png');
   img5 = loadImage('img/bag_seeds.png');
   img6 = loadImage('img/dirt_pile_smol.png');
   img7 = loadImage('img/bag_seeds_smol.png');
-  img10 = loadImage('img/sprout_stage3.png');
+img10 = loadImage('img/sprout_stage3.png');
   img11 = loadImage('img/sprout_stage4.png');
   img12 = loadImage('img/check_mark.png');
-
   fontInstruct = loadFont("font/Mulish-Regular.ttf");
 }
 
@@ -107,13 +90,6 @@ function setup() {
   system2 = new ParticleSystem2(createVector(widthC / 2, 50));
   system3 = new ParticleSystem3(createVector(widthC / 2, 50));
   //frameRate(100);
-
-  sound1.setVolume(0.25);
-  sound2.setVolume(0.25);
-  sound3.setVolume(0.25);
-  sound4.setVolume(0.25);
-  sound5.setVolume(0.25);
-  sound6.setVolume(0.25);
 }
 
 function draw() {
@@ -131,8 +107,6 @@ function draw() {
     if (mouseIsPressed == true) {
       system.addParticle();
       system.run();
-      //do not put the sound here or it plays over and over and over creating a static
-      //sound1.play();
       //print('watering from the wateringcan');
       //this shows that the plants have been watered checking it off as a requirement to grow
       if (mouseX > 477 - 100 &&
@@ -148,10 +122,7 @@ function draw() {
     if (mouseIsPressed == true) {
       system2.addParticle();
       system2.run();
-    //do not put the sound here or it plays over and over and over creating a static
       //print('dirt being shovel');
-
-      //denotes if the dirt was shoveled or not
       if (mouseX > dirtx1 &&
         mouseX < dirtx1 + 211 &&
         mouseY > dirty1 &&
@@ -170,10 +141,7 @@ function draw() {
     if (mouseIsPressed == true) {
       system3.addParticle();
       system3.run();
-    //  seedsoundconfirm = true;
       //print('planting seeds!');
-      //do not put the sound here or it plays over and over and over creating a static
-      //these dictate if you will plant a seed or not
       if (mouseX > dirtx1 &&
         mouseX < dirtx1 + 211 &&
         mouseY > dirty1 - 70 &&
@@ -213,76 +181,24 @@ function mousePressed() {
   //shovel
   if (overshovel == true) {
     shovelselect = true;
-    sound3.play();
+    //print("shovel is now selected");
 
-    waterselect = false;
-    seedselect = false;
-  }
-  if(shovelselect=true){
     waterselect = false;
     seedselect = false;
   }
   //watercan
   if (overwatering == true) {
     waterselect = true;
-    sound1.play();
 
     shovelselect = false;
     seedselect = false;
   }
-  // if(waterselect=true){
-  //   shovelselect = false;
-  //   seedselect = false;
-  // }
-
   //seed bag
   if (overseeds == true) {
     seedselect = true;
-    sound5.play();
+
     shovelselect = false;
     waterselect = false;
-  }
-  // if(seedselect=true){
-  //   waterselect = false;
-  //   shovelselect = false;
-  // }
-
-
-
-  if (watersoundconfirm == true){
-    sound2.play();
-  }
-  if (shovelsoundconfirm == true){
-    sound4.play();
-  }
-  if (seedsoundconfirm  == true){
-    sound6.play();
-  }
-
-
-//for the
-  // if (waterselect == true) {
-  //   sound2.play();
-  // }
-  //
-  // if (shovelselect == true) {
-  //   sound4.play();
-  // }
-  //
-  // if (seedselect == true) {
-  //   sound6.play();
-  // }
-}
-
-function mouseReleased() {
-  if (waterselect = true) {
-    sound2.pause();
-  }
-  if (shovelselect = true) {
-    sound4.pause();
-  }
-  if (seedselect = true) {
-    sound6.pause();
   }
 }
 
@@ -315,6 +231,7 @@ function toolbar() {
     mouseY < shoy + 100
   ) {
     overwatering = true;
+    //print("touching the watering can!");
     rect(shox, shoy, 103, 100);
     stroke(255, 255, 25);
   } else {
@@ -329,6 +246,8 @@ function toolbar() {
   ) {
     overseeds = true;
     rect(sedx, sedy, 103, 100);
+    //  stroke(255,255,25);
+    //print("touching the seed bag!");
   } else {
     overseeds = false;
     noStroke();
