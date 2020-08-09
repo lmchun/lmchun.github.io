@@ -1,4 +1,4 @@
-/*TABLE OF CONTENT 
+/*TABLE OF CONTENT
 
 
 
@@ -70,8 +70,8 @@ img{
 }
 
 .logo{
-  font-size:22px; 
-  text-align:left; 
+  font-size:22px;
+  text-align:left;
   font-family: 'Montserrat', sans-serif;
   padding-top: 10px;
 
@@ -98,12 +98,15 @@ a{
 .imgselect{
     width:80%;
     border:solid 50px #272b2b;
-    
+
 }
 
 .big{
   height:300px;
   width:300px;
+}
+.sizefix{
+	height:300px;
 }
 
 .imgcrop1{
@@ -142,7 +145,7 @@ video hover with js*/
     .viewport:hover video {
       opacity: 1;
     }
-   
+
     .fade {
       transition: opacity .5s ease-in-out;
     }
@@ -197,7 +200,7 @@ video hover with js*/
 
 .navigation {
   list-style: none;
-  margin: 0; 
+  margin: 0;
   font-family: 'Montserrat', sans-serif;
   display: flex;
   justify-content:flex-end;
@@ -214,7 +217,7 @@ video hover with js*/
 
 .subnavigation {
   list-style: none;
-  margin: 0; 
+  margin: 0;
   border-radius:10px;
   background: white;
   font-family: 'Montserrat', sans-serif;
@@ -249,4 +252,3 @@ video hover with js*/
 display:grid;
 
 }
-
