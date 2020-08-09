@@ -1,0 +1,268 @@
+/*TABLE OF CONTENT
+
+
+
+
+
+
+
+
+
+
+
+*/
+body {
+	font-family: verdana;
+	display: block;
+	text-align: center;
+}
+
+
+h1 {
+color: white;
+	/*color:  #617378;*/
+font-family: 'Lato', sans-serif;
+  font-size:50px;
+}
+
+h2{
+  font-family: 'Lato', sans-serif;
+  /*color: #8797a6;*/
+  color:white;
+}
+
+
+.text{
+  padding: 10px;
+  margin-left: 90px;
+  margin-right: 90px;
+}
+
+.flex{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+.flexbox_gallery{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content:center;
+}
+
+/*
+custom google fonts
+font-family: 'Chilanka', cursive;
+font-family: 'Gayathri', sans-serif;
+font-family: 'Hepta Slab', serif; like a typewriter
+font-family: 'Lato', sans-serif;
+font-family: 'Livvic', sans-serif;
+font-family: 'Montserrat', sans-serif;amily: 'Manjari', sans-serif;
+*/
+
+img{
+  margin:10px;
+  transition: all 0.3s;
+}
+
+.imgmain:hover{
+   transform:scale(1.1);
+}
+
+.logo{
+  font-size:22px;
+  text-align:left;
+  font-family: 'Montserrat', sans-serif;
+  padding-top: 10px;
+
+}
+
+a{
+  text-decoration: none;
+   list-style: none;
+   color:black;
+}
+
+/*COLOR PALETTES:
+-pinky color: #bfb6bb;
+-gray blue color: #8797a6;
+-greeny teal color: #b4bfbd; the p background
+-blackish color: #272b2b; this is currently the background color
+-bluely gray color: #617378; this is currently the navigatation background color
+*/
+
+.imgmain{
+  border-radius: 5px;
+}
+
+.imgselect{
+    width:80%;
+    border:solid 50px #272b2b;
+
+}
+
+.big{
+  height:300px;
+  width:300px;
+}
+.sizefix{
+	height:300px;
+}
+
+.imgcrop1{
+   object-fit: cover;
+  object-position:60% 0;
+
+  width: 500px;
+  height: 350px;
+}
+
+.imgcrop2{
+   object-fit: cover;
+  object-position:60% 0;
+
+  width: 700px;
+  height: 350px;
+}
+
+.accent-band{
+	background-color:slategrey;
+}
+
+.headimgmain{
+	margin-top: 30px;
+  background-repeat:no-repeat;
+  background-position: center;
+	padding: 10%;
+  flex-wrap:nowrap;
+  background-size:100%;
+  text-align:left;
+
+}
+
+
+
+
+
+/*_______________________________________________________*/
+/*https://gist.github.com/adamloving/ee4d980e3de2fc125207
+video hover with js*/
+
+  .viewport {
+      position: relative;
+      width: 300px;
+      height: 300px;
+    }
+    .viewport:hover img {
+      opacity: 1;
+    }
+    .viewport:hover video {
+      opacity: 1;
+    }
+
+    .fade {
+      transition: opacity .5s ease-in-out;
+    }
+    video {
+      height: 500px;
+      width: 500px;
+      display:flex;
+    }
+/*______________________________________________________-*/
+
+
+/*NAVIGATION: https://codepen.io/HugoGiraudel/pen/pkwqH*/
+
+.dropbtn {
+  background-color: white;
+  color: white;
+  padding-right: 30px;
+  padding-left:30px;
+  font-size: 16px;
+  border: none;
+/*   border-radius:5px; */
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #61737880;}
+
+
+
+.navigation {
+  list-style: none;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content:flex-end;
+}
+
+.navigation a {
+  text-decoration: none;
+  display: block;
+  padding: 1em;
+  color: Black;
+}
+
+.navigation1 a:hover {background-color: #61737880;}
+
+.subnavigation {
+  list-style: none;
+  margin: 0;
+  border-radius:10px;
+  background: white;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content:space-around;
+
+}
+
+/*_________________________________________*/
+.subcontainer {
+  box-sizing: border-box;
+  min-height: 300px;
+  padding: 20px;
+  margin-bottom: 40px;
+  clear: both;
+  display:flex;
+}
+
+.containleft{
+ padding-left: 100px;
+ float:left;
+  }
+
+.containright{
+  padding-right: 100px;
+  float:right;
+}
+
+/*_________________________________________*/
+
+.grid {
+display:grid;
+
+}
