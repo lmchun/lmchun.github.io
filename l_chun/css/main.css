@@ -129,6 +129,20 @@ a{
 	background-color:slategrey;
 }
 
+.headimgmain{
+	margin-top: 30px;
+  background-repeat:no-repeat;
+  background-position: center;
+	padding: 10%;
+  flex-wrap:nowrap;
+  background-size:100%;
+  text-align:left;
+
+}
+
+
+
+
 
 /*_______________________________________________________*/
 /*https://gist.github.com/adamloving/ee4d980e3de2fc125207
