@@ -1,0 +1,99 @@
+
+h1{
+color:#97A624;
+font-family: 'Antic Slab', serif;
+text-decoration: underline;
+
+}
+
+h2{
+  font-family: 'Antic Slab', serif;
+}
+h3{
+  font-family: 'Antic Slab', serif;
+}
+p{
+  font-family: 'PT Sans', sans-serif;
+}
+.bottom_banner{
+
+  background-color:  #B8652A;
+}
+
+.homeicon{
+  width:70px;
+}
+
+.header{
+  padding-top: 2%;
+  padding-left: 1%;
+  padding: 1%;
+  background-color: #75B9DD ;
+}
+
+.plantflex{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content: center;
+  align-content:space-between;
+  /* overflow: hidden; */
+
+}
+/*
+.plantgrid{
+  display:grid;
+  grid-template-columns: 20% 20% 20% 20% 20% 20%;
+  grid-template-rows: 50% 50%;
+} */
+
+.plant_image_container{
+
+}
+
+.plantimage{
+  height:250px;
+}
+/* for index of all plants */
+.plant_main_image{
+  height:250px;
+  border-radius: 20px;
+  padding: 3%;
+  transform:scale(1);
+  transition: transform 0.3s ease-in-out;
+  /* margin-left: 1%; */
+  /* margin-right: 1%; */
+}
+/* hover over image mechanic */
+/* .plant_main_image:hover .overlay {
+  opacity: 1;
+} */
+.plant_main_image:hover{
+     /* transition: transform 0.3s ease-in-out; */
+     transform:scale(1.1);
+     /* border-radius: 20px; */
+}
+
+.imageoverlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: #008CBA;
+}
+
+.hovertitle {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
