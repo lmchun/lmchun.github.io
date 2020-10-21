@@ -237,11 +237,20 @@ video hover with js*/
   border-radius:10px;
   background: white;
   font-family: 'Montserrat', sans-serif;
-  display: flex;
-  justify-content:space-around;
-
+/*  justify-content:space-around;*/
+}
+.socialmedia{
+    float:right;
+/*
+    display: flex;
+    justify-content:flex-end;
+*/
+    
 }
 
+.copyright{
+   float:left;
+}
 /*_________________________________________*/
 .subcontainer {
   box-sizing: border-box;
