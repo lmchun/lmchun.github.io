@@ -59,7 +59,9 @@ font-family: 'Lato', sans-serif;
 font-family: 'Livvic', sans-serif;
 font-family: 'Montserrat', sans-serif;amily: 'Manjari', sans-serif;
 */
-
+.hovermain:hover{
+    
+}
 img{
   margin:10px;
   transition: all 0.3s;
