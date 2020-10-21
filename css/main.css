@@ -255,19 +255,19 @@ video hover with js*/
 .subcontainer {
   box-sizing: border-box;
   min-height: 300px;
-  padding: 20px;
+  padding: 2%;
   margin-bottom: 40px;
   clear: both;
   display:flex;
 }
 
 .containleft{
- padding-left: 100px;
+ padding-left: 1%;
  float:left;
   }
 
 .containright{
-  padding-right: 100px;
+  padding-right: 1%;
   float:right;
 }
 
