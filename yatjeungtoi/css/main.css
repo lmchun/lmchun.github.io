@@ -1,0 +1,16 @@
+
+h1{
+    font-family: 'JetBrains Mono', monospace;
+}
+h2{
+    font-family: 'Nunito', sans-serif;
+}   
+.hero_container{
+    display:grid;
+}
+.hero_text{
+    display:flex;
+/*    text-align: center;*/
+   justify-content: space-around;
+/*    flex-grow:2;*/
+}
