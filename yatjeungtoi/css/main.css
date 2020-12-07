@@ -14,3 +14,12 @@ h2{
    justify-content: space-around;
 /*    flex-grow:2;*/
 }
+
+.end_nav{
+  display:flex; 
+  text-decoration: none;
+}
+.end_nav-child{
+    justify-content: space-around; 
+    align-self: flex-end;
+}
