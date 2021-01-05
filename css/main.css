@@ -70,7 +70,41 @@ img{
 .imgmain:hover{
    transform:scale(1.1);
 }
+.headimg2:hover .hero_overlay{
+    opacity: 0.3;
+}
+.headimg2:hover .hero_text{
+    opacity: 1;
+}
+.InvisibleText{
+    opacity: 0;
+}
+.hero_overlay{
+  position: 50% 50%;
+  top: 0;
+  bottom: 0;
+  left: 10;
+  right: 10;
+  height: 50%;
+  width: 50%;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: black;
+}
 
+.hero_text {
+  color: white;
+/*  font-size: 20px;*/
+/*  position: absolute;*/
+  display:flex;
+    justify-content: center;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
 .logo{
   font-size:22px;
   text-align:left;
