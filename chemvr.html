@@ -72,30 +72,66 @@
     <p>I personally worked on producing the 3D models as well as all graphic designs and UI UX designs. Also helped test and build the VIVE and iOS versions of the application. I also created handouts for students who were unfamiliar with no only a VR headset but how to use the application overall.</p>
     <!-- </div> -->
     <p>Here is a link to the Spartan Daily's article about the project <a href="https://sjsunews.com/article/sjsu-professor-teaches-chemistry-with-virtual-reality"><strong><u>SJSU professor teaches chemistry with virtual reality</u> </strong></a></p>
-
     <br>
     <h3>Light Mode</h3>
     <div class="flexbox_gallery">
-        <img src="img/chemvr/chemvr_screenshot2.jpg" style="width:50%; height:50%">
+        <img src="img/chemvr/chemvr_screenshot2.jpg" style="width:80%; height:80%">
     </div>
     <h3>Dark Mode</h3>
     <div class="flexbox_gallery">
-        <img src="img/chemvr/chem_vr_dark_mode.png" style="width:50%; height:50%">
+        <img src="img/chemvr/chem_vr_dark_mode.png" style="width:80%; height:80%">
     </div>
     <p>
         Here was the dark mode version we were working on adding to allow users to view the container better.
     </p>
+    
+    <h1 style="color:black">Design and Development</h1>
+   <p class="text">
+    The application was designed to be platform agnostic. The design was informed by students using the mobile version of our application. Since the primarily use case was mobile we had to focus on design considerations for the user base. 
+</p> 
+<h3>General Design Considerations:</h3>
+ <p class="text">
+The space was created with minimal complexity, this was decided so minimize potential delay that would cause motion sickness.
+     </p>
+<h3>Laser/Controller Function:</h3>
+ <p class="text">
+In mobile device VR, the user is equip with a bluetooth controller. These controllers do not track position or motion which the more robust heads mounted displays (HMD) have. 
+ </p>
+ <p class="text">
+A laser was implemented so that students could use it to point and select content. In the VIVE version of the application you can physically move your controller to the direction of the content to have the option to select it.
+ </p>
+<h3>Room/Movement Design:</h3>
+ <p class="text">
+The room was design to be a single space that would be easy to walk around. In HMD VR, the player can get motion sick if they are moving around the space, it is jarring to move around the space without physically walking around the space. A teleport function can be used to solve this problem if the space is more than the 6 x 6 ft space that typical set ups have. In mobile mode, your phone does not track your positions in space only your orientation. The bluetooth controller allows students to walk around the space with the joystick. Since this is also jarring, the best user experience is sitting down in a rotating chair to ease the movement. 
+   </p> 
+   
+   
     <h3>Controller Models</h3>
 <!--    <h4>Controller Models</h4>-->
      <div class="flexbox_gallery">
-        <img src="img/chemvr/canbor_wireframe.png" style="width:50%; height:50%">
-        <img src="img/chemvr/carbor_uv.png" style="width:50%; height:50%">
-        <img src="img/chemvr/fortune_wireframe.png" style="width:50%; height:50%">
-        <img src="img/chemvr/fortune_uv.png" style="width:50%; height:50%">
+        <img src="img/chemvr/canbor_wireframe.png" style="width:30%; height:30%">
+        <img src="img/chemvr/carbor_uv.png" style="width:30%; height:50%">
     </div>
-    <h3>Mobile Controller Diagram</h3>
-    Here is one of the mobile controller diagrams I created the Canbor mobile controller.
-    <img src="img/chemvr/chemvr_mobile_controller_diagram.jpg" style="width:50%; height:50%">
+    <div class="flexbox_gallery">
+         <img src="img/chemvr/fortune_wireframe.png" style="width:30%; height:30%">
+        <img src="img/chemvr/fortune_uv.png" style="width:30%; height:30%">
+    </div>
+    <h3>Menu Icons</h3>
+ 
+    <div class="flexbox_gallery">
+    <img src="img/chemvr/Max_Boltz_v3.png" style="width:15%; height:15%">
+    <img src="img/chemvr/NumberofParticles_v3.png" style="width:15%; height:15%">
+    <img src="img/chemvr/Elements_v3.png" style="width:15%; height:15%">
+    <img src="img/chemvr/temperature_v3.png" style="width:15%; height:10%">
+    <img src="img/chemvr/Volume_v3.png" style="width:15%; height:15%">
+    <img src="img/chemvr/KinecticEnergy_v3.png" style="width:15%; height:15%">
+    </div>
+    
+  <p class="text">  The icons you click on to select different menus. When the laser is hovering over the icon is highlighted, it turns a slightly darker color when you have that menu open. </p>
+      <h3>Mobile Controller Diagram</h3>
+  <p class="text">  Here is one of the mobile controller diagrams I created the Canbor mobile controller. </p>
+    <img src="img/chemvr/chemvr_mobile_controller_diagram.jpg" style="width:60%; height:60%">
+<!--    <img src="img/chemvr/chemvr_mobile_controller_diagram.jpg" style="width:50%; height:50%">-->
     <!--<u><strong>Canbor Mobile Controller Diagram</strong></a></u><br><br>-->
 
     <!--
