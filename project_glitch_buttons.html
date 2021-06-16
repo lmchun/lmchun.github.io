@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="css/glitch_page.css" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Chilanka|Gayathri|Hepta+Slab|Lato|Livvic|Manjari|Montserrat|Quicksand|Turret+Road&display=swap" rel="stylesheet">
+	<meta charset="UTF-8">
+		<title>Glitch Page</title>
+		<link rel="shortcut icon" tyle="image/png" href="favicon.png" size="32x32"/>
+ <!--  <style>
+        body{    
+    background-image:url("https://picsum.photos/id/350/1200/2200");
+/*    background-image:url("https://picsum.photos/id/350/1000/1000/?blur");    */
+/*        https://picsum.photos/*/
+        background-repeat: no-repeat;
+        background-position: center;
+        }
+    </style>-->
+
+</head>
+
+<body>
+    <nav><a href="#">HOME</a> |
+<a href="#">Work</a> |
+<a href="#">About</a> |
+<a href="#">Contact</a>
+<a href="#"><img src="img/icons/menu_bar_white.png" style="height:1em;"></a>
+    </nav>
+<!--
+    <div class="grad_button">
+    <h1>Button</h1></div>
+-->
+<!--    <a href="#">-->
+<!--        <div class="clear_blue_button">Button-->
+<!--        </div>-->
+<!--    </a>-->
+    <button class="collapsible">Open Section 1</button>
+         <div class="content">
+                 <!--     <a href="https://wpforms.com/how-to-customize-button-styles-with-css-with-examples/">--><img src="img/glitch_page/ghost-button-example.jpg"> <h2>inspiration</h2><!--    </a>-->
+        </div>
+
+    <button class="collapsible">Open Section 1</button>
+    <!--     <a href="#">-->
+         <div class="content"><img src="img/glitch_page/other_inspiration.png" style="width:50%;"> <h2>inspiration</h2>
+        </div>
+<!--    </a>-->
+    <script>
+var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+    } 
+  });
+}
+</script>    
+</body>

@@ -1,0 +1,84 @@
+html {
+  scroll-behavior: smooth;
+}
+/*something for the buttons*/
+    body{    
+    background-image:url("https://picsum.photos/id/350/1200/2200");
+/*    background-image:url("https://picsum.photos/id/350/1000/1000/?blur");    */
+/*        https://picsum.photos/*/
+        background-repeat: no-repeat;
+        background-position: center;
+        }
+.grad_button{
+/*    background: rgb(255,8,8);*/
+/*    https://cssgradient.io/*/
+/*    https://www.w3schools.com/css/css3_gradients.asp*/
+    background: linear-gradient(270deg, rgba(255,8,8,1) 0%, rgba(99,49,49,1) 47%, rgba(0,212,255,1) 100%);
+    padding: 2%;
+    text-align: center;
+    color:whitesmoke;
+    }
+    
+    nav:hover{
+      background: linear-gradient(270deg, rgba(255,8,8,1) 0%, rgba(99,49,49,1) 47%, rgba(0,212,255,1) 100%);  
+    }
+    .clear_blue_button{
+        border: 2em solid transparent;
+  padding: 15px;
+/*     border-radius: 10em;*/
+     border-image: url("img/glitch_page/border_w3.png");
+        padding: 2%;
+/*         background: rbga(255, 255,255, 30);*/
+    text-align: center;
+    color:whitesmoke;
+        font-size: 24px;  
+    }
+    
+    nav{
+      font-size: 24px;  
+    }
+    
+    a{
+        text-decoration:none;
+    }
+    
+    .clear_blue_button:hover{
+/*                background: rbga(255, 255,255, 30);*/
+    }
+/*https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_collapsible_symbol*/
+
+.collapsible {
+  background-color: #777;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: #555;
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212";
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}

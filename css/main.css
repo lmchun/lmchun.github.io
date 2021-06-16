@@ -21,6 +21,9 @@ font-family: 'Manjari', sans-serif;
 font-family: 'Montserrat', sans-serif;
 font-family: 'Quicksand', sans-serif;
 font-family: 'Turret Road', cursive;*/
+html {
+  scroll-behavior: smooth;
+}
 body {
 	font-family: verdana;
 	display: block;
