@@ -335,7 +335,9 @@ border-radius:1vw;}
 display:grid;
 
 }
-/*________________________________*/
+
+/*__________________index media query______________*/
+/*index main features*/
 .main_feature_img1{
     width:90%;
 }
@@ -348,6 +350,12 @@ display:grid;
 .profile_image{
     width:50%;
 }
+
+/*gallery images*/
+.gallery_image_size{
+    
+}
+
 @media only screen and (min-width:768px){
     .main_feature_img1{
         width:50vw;
@@ -361,4 +369,12 @@ display:grid;
   .profile_image{
       width:30vw;}
 }
+
+@media only screen and (min-width:1500px){
+/*
+    .big{
+        width:50vw;
+        height:50vw;
+    }
+*/
 }
