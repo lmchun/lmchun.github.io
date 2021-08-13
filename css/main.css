@@ -378,3 +378,28 @@ display:grid;
     }
 */
 }
+/*.hr_gray{
+ border-top: 3px solid #bbb;
+ border-radius: 5px;
+ opacity: 20%;    
+}
+
+.nav_color{
+/*    add to div style="position:fixed;"*/
+/*     background: linear-gradient(141deg, #0fb8ad 0%, #1fc8db 51%, #2cb5e8 75%);*/
+/*    background-color: aliceblue;*/
+/*    border-radius: 3px;
+    border:2em;
+    background-color 2s ease-out;
+  -moz-transition: background-color 2s ease-out;
+  -o-transition: background-color 2s ease-out;
+  transition: background-color 2s ease-out;
+}
+.nav_color:hover {
+    background-color: white;
+    cursor: pointer;
+}*/
+/*https://css-tricks.com/almanac/properties/t/transition/
+
+look at this one later
+https://webdesign.tutsplus.com/tutorials/simple-fade-effect-on-scroll--cms-35166*/
