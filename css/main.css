@@ -335,7 +335,10 @@ border-radius:1vw;}
 display:grid;
 
 }
-
+.icon{
+   padding: 0.5em; 
+    width: 20%;
+}
 /*__________________index media query______________*/
 /*index main features*/
 .main_feature_img1{
@@ -368,16 +371,28 @@ display:grid;
     }
   .profile_image{
       width:30vw;}
+    
+    .icon{
+        width:10vw;
+    }
 }
 
 @media only screen and (min-width:1500px){
-/*
     .big{
-        width:50vw;
-        height:50vw;
+        width:40vw;
+        height:40vw;
     }
-*/
 }
+@media only screen and (max-width:650px){
+    
+    .big{
+        width:90vw;
+        height:90vw;
+    }
+}
+    
+    
+    
 /*.hr_gray{
  border-top: 3px solid #bbb;
  border-radius: 5px;
