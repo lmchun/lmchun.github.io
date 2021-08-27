@@ -56,25 +56,25 @@
 <!-- Use it like any other HTML element -->
 <model-viewer src="gltf/curtain_call/cove.glb" poster="gltf/curtain_call/cove.png" shadow-intensity="1" ar ar-modes="webxr scene-viewer quick-look" camera-controls alt="A 3D model carousel of 360 views from curtain call. From left to right, a 360 image on a sphere shape of a cove cave, a forest rock enclosure, and an open field with multiple rocks and a few trees along a path.">
   
-  <button slot="ar-button" id="ar-button">
+  <button slot="ar-button" id="ar-button" alt="view in your space">
     View in your space
   </button>
 
   <div id="ar-prompt">
-    <img src="img/model-viewer/hand.png">
+    <img src="img/model-viewer/hand.png" alt="a hand">
   </div>
 
-  <button id="ar-failure">
+  <button id="ar-failure" alt="AR is not tracking!">
     AR is not tracking!
   </button>
 
   <div class="slider">
     <div class="slides">
-      <button class="slide selected" onclick="switchSrc(this, 'cove')" style="background-image: url('gltf/curtain_call/cove.png');">
+      <button class="slide selected" onclick="switchSrc(this, 'cove')" style="background-image: url('gltf/curtain_call/cove.png');"alt="Cove 360 image">
 
-      </button><button class="slide" onclick="switchSrc(this, 'forest')" style="background-image: url('gltf/curtain_call/forest.png');">
+      </button><button class="slide" onclick="switchSrc(this, 'forest')" style="background-image: url('gltf/curtain_call/forest.png');" alt="Forest 360 image">
 
-      </button><button class="slide" onclick="switchSrc(this, 'field')" style="background-image: url('gltf/curtain_call/field.png');">
+      </button><button class="slide" onclick="switchSrc(this, 'field')" style="background-image: url('gltf/curtain_call/field.png');" alt="Field 360 image">
       
       </button></div>
   </div>
