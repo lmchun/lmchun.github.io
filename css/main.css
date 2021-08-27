@@ -417,3 +417,30 @@ display:grid;
 
 look at this one later
 https://webdesign.tutsplus.com/tutorials/simple-fade-effect-on-scroll--cms-35166*/
+
+
+
+
+
+/*____________ITP BLOG CSS______________*/
+
+.sub_navi{
+    color: #03b1fc;
+}
+
+.blog_hero_container{
+    
+    padding-top:5em; padding-left: 5em; padding-right: 5em;
+}
+
+.blog_hero{
+  background-image: url("https://picsum.photos/id/909/600/400?grayscale&blur=2");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding:5em; border0:1em; border-style: solid; border-radius: 0.5em;
+  border-color:rgba(0,0,0,0); 
+/*  color:antiquewhite;*/
+    
+}
