@@ -430,7 +430,7 @@ https://webdesign.tutsplus.com/tutorials/simple-fade-effect-on-scroll--cms-35166
 
 .blog_hero_container{
     
-    padding-top:5em; padding-left: 5em; padding-right: 5em;
+    padding-top:0.4em; padding-left: 5em; padding-right: 5em;
 }
 
 .blog_hero{
@@ -443,4 +443,51 @@ https://webdesign.tutsplus.com/tutorials/simple-fade-effect-on-scroll--cms-35166
   border-color:rgba(0,0,0,0); 
 /*  color:antiquewhite;*/
     
+}
+
+.blog_faq_container{
+    padding: 3em 5em 0em;
+}
+
+.blog_faq{
+  background-image: url("https://picsum.photos/id/199/600/400?grayscale&blur=2");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding:5em; border0:1em; border-style: solid; border-radius: 0.5em;
+  border-color:rgba(0,0,0,0); 
+/*  color:antiquewhite;*/
+    
+}
+.faq_background{
+/*    background: rgba(255,255,255,.6);*/
+    background: rgba(0,0,0,.5);
+    border: solid;
+/*    border-color: rgba(255,255,255,.6);*/
+     border-color: rgba(0,0,0,.1);
+    border-radius: 1em;
+}
+.title_background{
+    padding-top: 0.5 em;
+    padding-bottom: 0.5 em;
+    background: rgba(0,0,0,.5);
+    border: solid;
+    border-color: rgba(0,0,0,.1);
+    border-radius: .2em;
+  
+}
+.faq_text{
+    color:rgb(225,225,225);
+    padding-bottom: 0.5em;
+/*    color: white;*/
+    text-align: justify;
+    text-justify: inter-word;
+    margin: 0em 1em;
+}
+.faq_title{
+/*    color:black;*/
+    color:rgb(225,225,225);
+    padding-top: 0.5em;
+    text-decoration: underline;
 }
