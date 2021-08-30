@@ -55,7 +55,19 @@ const sphere = BABYLON.MeshBuilder.CreateSphere('sphere',{
         points
     },scene);
 
-  
+    const material = new BABYLON.StandardMaterial('material', scene);
+    material.diffuseColor = new BABYLON.Color3(1,0,1);    
+    material.emissiveColor = new BABYLON.Color3(1,0,1); 
+
+    box.material = material;
+
+    const material2 = new BABYLON.StandardMaterial('material', scene);
+    material2.diffuseTexture = new BABYLON.Texture('assets/images/coney_island_edit.jpg', scene);
+
+    sphere.material = material2;
+
+    
+
 return scene;
 
 }
