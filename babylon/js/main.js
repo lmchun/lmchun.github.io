@@ -66,7 +66,9 @@ const sphere = BABYLON.MeshBuilder.CreateSphere('sphere',{
 
     sphere.material = material2;
 
-    
+    const materialforbox = new BABYLON.StandardMaterial('material', scene);
+    box.material = materialforbox;
+    materialforbox.wireframe = true;
 
 return scene;
 
