@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="/css/main.css" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/css?family=Chilanka|Gayathri|Hepta+Slab|Lato|Livvic|Manjari|Montserrat|Quicksand|Turret+Road&display=swap" rel="stylesheet">
+	<meta charset="UTF-8">
+		<title>Model Gallery</title>
+		<link rel="shortcut icon" tyle="image/png" href="/favicon.png" size="32x32"/>
+<style>
+    model-viewer{
+        width: 400px;
+        height: 600px;
+        margin: 0 auto;
+    }
+</style>
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<meta name="description" content="Lauren Chun is a digital media artist that works in virtual reality and augmented reality. She also specializes in 3D printing and web development." />
+    
+<meta name="keywords" content="Lauren Chun Artist, Digital Media Art, Lauren M Chun, heroes, frontline, ar, arpoise, arvos, augmentedreality" />
+
+</head>
+<body>
+    <a href="/index.html">
+        <div class="logo"><strong>Lauren Chun</strong></div>
+    </a><br>
+    <ul class="navigation">
+        <div class="navigation1">
+            <li><a href="/index.html">Home</a></li>
+        </div>
+
+        <!-- <div class="navigation1">
+            <li><a href="/virtualspaces.html">Virtual Spaces</a></li>
+        </div>
+        <div class="navigation1">
+            <li><a href="/renders.html">Renders</a></li>
+        </div> -->
+        <div class="navigation1">
+            <li> <a href="/bio.html">About</a></li>
+        </div>
+
+    </ul>
+
+
+<!-- Import the component -->
+
+<h3>Model Gallery:</h3>
+
+<!-- Use it like any other HTML element -->
+<model-viewer src="/gltf/lotus_wireframe/2021_09_23_wire-frame-transparency-white-test.glb" poster="gltf//cove.png" shadow-intensity="1" ar ar-modes="webxr scene-viewer quick-look" camera-controls alt="A 3D model carousel of 360 views from curtain call. From left to right, a 360 image on a sphere shape of a cove cave, a forest rock enclosure, and an open field with multiple rocks and a few trees along a path.">
+  
+  <button slot="ar-button" id="ar-button" alt="view in your space">
+    View in your space
+  </button>
+
+  <div id="ar-prompt">
+    <img src="/img/model-viewer/hand.png" alt="a hand">
+  </div>
+
+  <button id="ar-failure" alt="AR is not tracking!">
+    AR is not tracking!
+  </button>
+
+  <div class="slider">
+    <div class="slides">
+      <button class="slide selected" onclick="switchSrc(this, '2021_09_23_wire-frame-transparency-white-test')" style="background-image: url('/gltf/lotus_wireframe/2021_09_23_wire-frame-transparency-white-test.png');"alt="Cove 360 image">
+
+      </button><button class="slide" onclick="switchSrc(this, 'litwick_cocoa_mini_50.glb')" style="background-image: url('gltf/litwick_cocoa/litwick_cocoa_mini_50.jpg');" alt="Forest 360 image">
+
+      </button><button class="slide" onclick="switchSrc(this, 'field')" style="background-image: url('gltf/field.png');" alt="Field 360 image">
+      
+      </button></div>
+  </div>
+</model-viewer>
+
+<script type="module">
+  const modelViewer = document.querySelector("model-viewer");
+
+  window.switchSrc = (element, name) => {
+    const base = "gltf/" + name;
+    modelViewer.src = base + '.glb';
+    modelViewer.poster = base + '.png';
+    const slides = document.querySelectorAll(".slide");
+    slides.forEach((element) => {element.classList.remove("selected");});
+    element.classList.add("selected");
+  };
+
+  document.querySelector(".slider").addEventListener('beforexrselect', (ev) => {
+    // Keep slider interactions from affecting the XR scene.
+    ev.preventDefault();
+  });
+</script>
+
+<style>
+  /* This keeps child nodes hidden while the element loads */
+  :not(:defined) > * {
+    display: none;
+  }
+
+  model-viewer {
+    background-color: #eee;
+    overflow-x: hidden;
+    --poster-color: #eee;
+  }
+
+  #ar-button {
+    background-image: url(/img/model-viewer/ic_view_in_ar_new_googblue_48dp.png);
+    background-repeat: no-repeat;
+    background-size: 20px 20px;
+    background-position: 12px 50%;
+    background-color: #fff;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    bottom: 132px;
+    padding: 0px 16px 0px 40px;
+    font-family: Roboto Regular, Helvetica Neue, sans-serif;
+    font-size: 14px;
+    color:#4285f4;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 18px;
+    border: 1px solid #DADCE0;
+  }
+
+  #ar-button:active {
+    background-color: #E8EAED;
+  }
+
+  #ar-button:focus {
+    outline: none;
+  }
+
+  #ar-button:focus-visible {
+    outline: 1px solid #4285f4;
+  }
+
+  @keyframes circle {
+    from { transform: translateX(-50%) rotate(0deg) translateX(50px) rotate(0deg); }
+    to   { transform: translateX(-50%) rotate(360deg) translateX(50px) rotate(-360deg); }
+  }
+
+  @keyframes elongate {
+    from { transform: translateX(100px); }
+    to   { transform: translateX(-100px); }
+  }
+
+  model-viewer > #ar-prompt {
+    position: absolute;
+    left: 50%;
+    bottom: 175px;
+    animation: elongate 2s infinite ease-in-out alternate;
+    display: none;
+  }
+
+  model-viewer[ar-status="session-started"] > #ar-prompt {
+    display: block;
+  }
+
+  model-viewer > #ar-prompt > img {
+    animation: circle 4s linear infinite;
+  }
+
+  model-viewer > #ar-failure {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 175px;
+    display: none;
+  }
+
+  model-viewer[ar-tracking="not-tracking"] > #ar-failure {
+    display: block;
+  }
+
+  .slider {
+    width: 100%;
+    text-align: center;
+    overflow: hidden;
+    position: absolute;
+    bottom: 16px;
+  }
+
+  .slides {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .slide {
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    width: 100px;
+    height: 100px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #fff;
+    margin-right: 10px;
+    border-radius: 10px;
+    border: none;
+    display: flex;
+  }
+
+  .slide.selected {
+    border: 2px solid #4285f4;
+  }
+
+  .slide:focus {
+    outline: none;
+  }
+
+  .slide:focus-visible {
+    outline: 1px solid #4285f4;
+  }
+
+</style>
+
+
+
+<br>
+
+
+
+
+
+<div class="subnavigation flex">
+        <br>
+        <p class="copyright">© Copyright 2018-2021 </p>
+
+        <div class="socialmedia"></div><a href="https://www.instagram.com/laurenmchun/">
+            <img src="/img/instagram-icon.png" style="width:35px;">
+        </a>
+        <a href="https://www.linkedin.com/in/laurenmchun/">
+            <img src="/img/linkedin_icon.png" style="width:35px;" alt="link to lauren's linkedin">
+        </a>
+                <a href="https://www.artstation.com/lmchun">
+            <img src="/img/artstation_icon.png" style="width:35px;" alt="the art station logo that links to lauren's artstation">
+        </a>
+    
+        <a href="https://sketchfab.com/lmchun">
+            <img src="/img/sketchfab_icon.png" style="width:35px;" alt="the sketchfab icon that links to lauren's sketchfab">
+        </a>
+    </div>
+
+</body>
+</html>
