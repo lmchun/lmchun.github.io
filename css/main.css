@@ -505,3 +505,7 @@ https://webdesign.tutsplus.com/tutorials/simple-fade-effect-on-scroll--cms-35166
 .gallery_block{
     padding:2%;
 }
+
+.button_link{
+    background:#9AF6FF; border-radius: 1em; border: 10px solid #9AF6FF;
+}
