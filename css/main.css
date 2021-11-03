@@ -44,9 +44,11 @@ h2 {
 }
 
 .text {
-  padding: 2%;
-  margin-left: 3%;
-  margin-right: 3%;
+/*  padding: 2%;*/
+  margin-left: 10%;
+  margin-right: 10%;
+  text-align:left;
+  text-indent: 2em;    
 }
 
 .bottomtext {
