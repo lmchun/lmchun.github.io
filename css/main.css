@@ -213,9 +213,9 @@ video hover with js*/
   transition: opacity 0.5s ease-in-out;
 }
 video {
-  height: 500px;
-  width: 500px;
-  display: flex;
+/*  height: 500px;*/
+/*  width: 500px;*/
+/*  display: flex;*/
 }
 /*______________________________________________________-*/
 
