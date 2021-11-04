@@ -45,11 +45,12 @@ h2 {
 
 .text {
 /*  padding: 2%;*/
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 20vmax;
+  margin-right: 20vmax;
   text-align:left;
   text-indent: 2em;    
 }
+
 
 .bottomtext {
   padding: 1%;
@@ -387,6 +388,35 @@ video {
   }
 }
 
+@media only screen and (max-width:945px){
+    .text{
+  margin-left: 10vmax;
+  margin-right: 10vmax;
+        }  
+     .videoplayer{
+        width: 90%;
+        height: 90%;
+    }
+}
+@media only screen and (min-width:945px){
+  .text{
+  margin-left: 30vmax;
+  margin-right: 30vmax;
+    }
+    .videoplayer{
+        width: 50%;
+        height: 50%;
+    }
+}
+@media only screen and (min-width:1890px){
+  .text{
+  margin-left: 35vmax;
+  margin-right: 35vmax;
+    }
+   
+}
+
+
 /*.hr_gray{
  border-top: 3px solid #bbb;
  border-radius: 5px;
@@ -508,4 +538,10 @@ https://webdesign.tutsplus.com/tutorials/simple-fade-effect-on-scroll--cms-35166
 
 .button_link{
     background:#9AF6FF; border-radius: 1em; border: 10px solid #9AF6FF;
+}
+
+
+.heroimagereduce{
+    height:30vmax;
+    
 }
