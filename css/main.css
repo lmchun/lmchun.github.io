@@ -380,13 +380,28 @@ video {
     width: 40vw;
     height: 40vw;
   }
+    .imgmain{
+        width:20vw;
+        height:20vw;
+    }
 }
 @media only screen and (max-width: 650px) {
   .big {
     width: 90vw;
     height: 90vw;
   }
+
 }
+/*
+
+@media only screen and (max-width: 800px) {
+ 
+    .imgmain{
+        width:90vw;
+        height:90vw;
+}
+}
+*/
 
 @media only screen and (max-width:945px){
     .text{
