@@ -390,6 +390,13 @@ video {
     width: 90vw;
     height: 90vw;
   }
+    
+/*
+.imgmain {
+    width: 90vw;
+    height: 90vw;
+  }
+*/
 
 }
 /*
@@ -402,26 +409,32 @@ video {
 }
 }
 */
-
+.videoplayer{
+    width:50vw;
+}
 @media only screen and (max-width:945px){
     .text{
   margin-left: 10vmax;
   margin-right: 10vmax;
         }  
+/*
      .videoplayer{
         width: 90%;
         height: 90%;
     }
+*/
 }
 @media only screen and (min-width:945px){
   .text{
   margin-left: 30vmax;
   margin-right: 30vmax;
     }
+/*
     .videoplayer{
         width: 50%;
         height: 50%;
     }
+*/
 }
 @media only screen and (min-width:1890px){
   .text{
@@ -549,6 +562,7 @@ https://webdesign.tutsplus.com/tutorials/simple-fade-effect-on-scroll--cms-35166
 
 .gallery_block{
     padding:2%;
+/*    width: 50vmax;*/
 }
 
 .button_link{
@@ -559,4 +573,33 @@ https://webdesign.tutsplus.com/tutorials/simple-fade-effect-on-scroll--cms-35166
 .heroimagereduce{
     height:30vmax;
     
+}
+
+.gridtop{
+   
+    display: grid;
+     grid-template-columns: 50vw 42vw;
+  grid-template-rows: auto;
+    grid-gap: 2vw;
+      grid-template-areas: 
+    "herogrid gridtitle"
+     "maingrid videoday"
+          "videonight finaldocgrid";
+/*    "main main . videonight"       */
+
+}
+
+.herogrid{
+/*    background-color: aqua;*/
+}
+.maingrid{
+/*     background-color: red;*/
+}
+
+.gridtitle{
+/*     background-color: pink;*/
+}
+
+.videoday{
+/*     background-color: green;*/
 }
